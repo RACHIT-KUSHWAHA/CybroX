@@ -1,8 +1,3 @@
-<h1 align="center">
-    
-    <br>
-    <b>CybroX Userbot</b>
-</h1>
 
 <p align="center">
     <a href="https://github.com/RACHIT-KUSHWAHA/CybroX/stargazers"><img src="https://img.shields.io/github/stars/RACHIT-KUSHWAHA/CybroX?color=yellow&logo=github&style=for-the-badge" alt="Stars" /></a>
