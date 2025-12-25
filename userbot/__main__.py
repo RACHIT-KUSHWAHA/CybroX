@@ -12,7 +12,7 @@ from userbot.helpers import config
 from userbot.helpers.db import liter, db
 
 # Import Cloud Loop persistence logic
-from database.core import restore_database, start_backup_loop
+from userbot.database.core import restore_database, start_backup_loop
 
 
 async def start_web_server():

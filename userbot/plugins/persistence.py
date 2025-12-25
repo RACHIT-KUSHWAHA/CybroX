@@ -1,7 +1,7 @@
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from database.core import backup_database, BACKUP_TAG
+from userbot.database.core import backup_database, BACKUP_TAG
 
 # Manual Backup Command
 @Client.on_message(filters.me & filters.command("backup", prefixes="."))
