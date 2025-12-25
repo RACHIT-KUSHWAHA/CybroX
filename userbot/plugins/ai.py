@@ -6,6 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 import g4f
 
+from userbot.core.logger import LOGS
 from userbot.helpers import config
 from userbot.helpers.misc import modules_help, prefix
 from userbot.helpers.scripts import edit_or_reply
@@ -23,7 +24,7 @@ if config.OPENAI_API_KEY:
     try:
         openai_client = AsyncOpenAI(api_key=config.OPENAI_API_KEY)
     except Exception as e:
-        print(f"Failed to init OpenAI: {e}")
+        LOGS.error(f"Failed to init OpenAI: {e}")
 
 # Gemini Configuration
 gemini_available = False
@@ -32,7 +33,7 @@ if config.GEMINI_API_KEY:
         genai.configure(api_key=config.GEMINI_API_KEY)
         gemini_available = True
     except Exception as e:
-        print(f"Failed to init Gemini: {e}")
+        LOGS.error(f"Failed to init Gemini: {e}")
 
 async def ask_g4f(query):
     """Fallback to g4f if official API fails"""
@@ -70,7 +71,7 @@ async def openai_cmd(client: Client, message: Message):
             )
             response = chat_completion.choices[0].message.content
         except Exception as e:
-            print(f"OpenAI Failed: {e}")
+            LOGS.error(f"OpenAI Failed: {e}")
             used_provider = "g4f (Fallback)"
             response = await ask_g4f(query)
     else:
@@ -98,7 +99,7 @@ async def get_valid_gemini_model():
         if models:
             return models[0].name
     except Exception as e:
-        print(f"Error listing models: {e}")
+        LOGS.error(f"Error listing models: {e}")
     return "models/gemini-pro"
 
 @Client.on_message(filters.command(["gemini", "gem"], prefix) & filters.me)

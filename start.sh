@@ -14,4 +14,4 @@ if [ -z "$STRINGSESSION" ] && [ -z "$SESSION_STRING" ]; then
 fi
 
 echo "Starting CybroX Userbot (Lite Plan)..."
-python3 main.py
+python3 -m userbot

@@ -11,6 +11,7 @@ import random
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+from userbot.core.logger import LOGS
 from userbot.helpers.misc import modules_help, prefix
 from userbot.helpers.scripts import edit_or_reply
 
@@ -24,7 +25,7 @@ async def type_cmd(client: Client, message: Message):
     
     orig_text = message.text.split(prefix + "type ", maxsplit=1)[1]
     text = orig_text
-    tbp = ""  # to be printed
+    tbp = ""  
     typing_symbol = "▒"
     
     while tbp != orig_text:
@@ -39,7 +40,7 @@ async def type_cmd(client: Client, message: Message):
             await asyncio.sleep(0.1)
             
         except Exception as e:
-            print(e)
+            LOGS.error(e)
             break
 
 
@@ -77,7 +78,7 @@ async def vapor_cmd(client: Client, message: Message):
     
     vapor_text = ""
     for char in text:
-        if 0x21 <= ord(char) <= 0x7F:  # ASCII printable range
+        if 0x21 <= ord(char) <= 0x7F:  
             vapor_text += chr(ord(char) + 0xFEE0)  # Convert to full-width
         elif char == " ":
             vapor_text += "　"  # Full-width space

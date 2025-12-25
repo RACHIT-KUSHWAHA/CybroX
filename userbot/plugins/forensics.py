@@ -6,6 +6,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+from userbot.core.logger import LOGS
 from userbot.helpers.misc import modules_help, prefix
 from userbot.helpers.scripts import edit_or_reply
 from userbot.helpers.db import db
@@ -52,7 +53,7 @@ async def edit_logger(client: Client, message: Message):
             
         except Exception as e:
             # Ssst, don't tell them we failed to spy
-            print(f"Forensics Error: {str(e)}")
+            LOGS.error(f"Forensics Error: {str(e)}")
 
 
 modules_help["forensics"] = {

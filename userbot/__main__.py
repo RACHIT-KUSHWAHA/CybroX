@@ -12,14 +12,8 @@ from userbot.helpers import config
 from userbot.helpers.db import liter, db
 
 # Import Cloud Loop persistence logic
-from userbot.database.core import restore_database, start_backup_loop
+from database.core import restore_database, start_backup_loop
 
-# Logging
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("cybrox.log"), logging.StreamHandler()],
-    level=logging.INFO,
-)
 
 async def start_web_server():
     """Starts a tiny aiohttp web server for keep-alive."""
