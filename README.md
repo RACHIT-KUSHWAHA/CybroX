@@ -5,8 +5,8 @@
 </h1>
 
 <p align="center">
-    <a href="https://github.com/YourUsername/CybroX-Userbot/stargazers"><img src="https://img.shields.io/github/stars/YourUsername/CybroX-Userbot?color=yellow&logo=github&style=for-the-badge" alt="Stars" /></a>
-    <a href="https://github.com/YourUsername/CybroX-Userbot/network/members"><img src="https://img.shields.io/github/forks/YourUsername/CybroX-Userbot?color=red&logo=github&style=for-the-badge" alt="Forks" /></a> 
+    <a href="https://github.com/RACHIT-KUSHWAHA/CybroX/stargazers"><img src="https://img.shields.io/github/stars/RACHIT-KUSHWAHA/CybroX?color=yellow&logo=github&style=for-the-badge" alt="Stars" /></a>
+    <a href="https://github.com/RACHIT-KUSHWAHA/CybroX/network/members"><img src="https://img.shields.io/github/forks/RACHIT-KUSHWAHA/CybroX?color=red&logo=github&style=for-the-badge" alt="Forks" /></a> 
     <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&style=for-the-badge" alt="Python" /></a>
     <a href="https://docs.pyrogram.org"><img src="https://img.shields.io/badge/Pyrogram-v2-orange?logo=telegram&style=for-the-badge" alt="Pyrogram" /></a>
 </p>
@@ -39,10 +39,10 @@
     <a href="https://heroku.com/deploy">
         <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" width="200" />
     </a>
-    <a href="https://render.com/deploy">
+    <a href="https://render.com/deploy?repo=https://github.com/RACHIT-KUSHWAHA/CybroX">
         <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" width="200" />
     </a>
-    <a href="https://app.koyeb.com/deploy">
+    <a href="https://app.koyeb.com/deploy?type=git&repository=RACHIT-KUSHWAHA/CybroX&branch=main&name=cybrox">
         <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy to Koyeb" width="200" />
     </a>
 </p>
@@ -53,8 +53,8 @@ Easy setup for developers and local testing.
 
 ```bash
 # 1. Clone Repository
-git clone https://github.com/YourUsername/CybroX-Userbot.git
-cd CybroX-Userbot
+git clone https://github.com/RACHIT-KUSHWAHA/CybroX.git
+cd CybroX
 
 # 2. Install Dependencies
 pip install -r requirements.txt
@@ -74,7 +74,9 @@ python main.py
 | `API_ID` | Telegram API ID (my.telegram.org) | ✅ |
 | `API_HASH` | Telegram API Hash | ✅ |
 | `SESSION_STRING` | Pyrogram Session String | ✅ |
+| `SUDO_USERS` | Space-separated IDs of sudo users | ❌ |
 | `GEMINI_API_KEY` | Google AI Studio Key (For AI) | ❌ |
+| `OPENAI_API_KEY` | OpenAI API Key (For GPT-4o) | ❌ |
 | `VT_API_KEY` | VirusTotal Key (For Sentinel) | ❌ |
 
 ## 🏗️ Structure
