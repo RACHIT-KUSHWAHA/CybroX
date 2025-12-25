@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://telegra.ph/file/7c04400508a8677bf9432.jpg" alt="CybroX Logo" width="200">
+    
     <br>
     <b>CybroX Userbot</b>
 </h1>
