@@ -10,13 +10,8 @@ from pyrogram.enums import ParseMode
 from userbot.helpers import config
 from userbot.helpers.db import liter, db
 
-# Try import persistence logic (Assuming it might be in userbot.plugins now)
-try:
-    from userbot.plugins.persistence import restore_db, start_backup_loop
-except ImportError:
-    logging.warning("Persistence plugin not found. Auto-backup disabled.")
-    async def restore_db(c): pass
-    async def start_backup_loop(c): pass
+# Import Cloud Loop persistence logic
+from database.core import restore_database, start_backup_loop
 
 # Logging
 logging.basicConfig(
@@ -60,7 +55,7 @@ async def main():
     # Note: restore_db must happen BEFORE liter.init ideally if we want validity, 
     # but asyncio.gather runs concurrently. 
     # We'll run restore first to ensure file exists, then init, then server.
-    await restore_db(app)
+    await restore_database(app)
     await liter.init()
     
     # 3. Start Web Server and Background Tasks

@@ -9,6 +9,9 @@ load_dotenv()
 API_ID = int(os.getenv("API_ID", 0))
 API_HASH = os.getenv("API_HASH", "")
 SESSION_STRING = os.getenv("SESSION_STRING", "") or os.getenv("STRINGSESSION", "")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+
 
 # Owner and Sudo Users
 # Expects a comma-separated list of user IDs in the environment variable

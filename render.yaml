@@ -1,0 +1,20 @@
+services:
+  - type: worker
+    name: cybrox-userbot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 main.py
+    autoDeploy: false
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: SESSION_STRING
+        sync: false
+      - key: DB_NAME
+        value: cybrox.db
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false

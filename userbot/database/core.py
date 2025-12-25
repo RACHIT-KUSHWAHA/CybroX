@@ -198,6 +198,28 @@ class CybroDB:
             await self.conn.commit()
 
     # -----------------------------------------------------------
+    # KV Store Convenience Wrappers
+    # -----------------------------------------------------------
+    async def set(self, collection: str, key: str, value: dict):
+        """Wrapper for add_document (upsert logic needed ideally, but add_document mimics insert)."""
+        # We'll try to add, if it fails (exists), we update.
+        existing = await self.find_document(collection, {"_id": key})
+        if existing:
+            return await self.update_document(collection, {"_id": key}, value)
+        
+        # Ensure _id is set to key
+        value["_id"] = key
+        return await self.add_document(collection, value)
+
+    async def get(self, collection: str, key: str):
+        """Wrapper for find_document."""
+        return await self.find_document(collection, {"_id": key})
+
+    async def delete(self, collection: str, key: str):
+        """Wrapper for delete_document."""
+        return await self.delete_document(collection, {"_id": key})
+
+    # -----------------------------------------------------------
     # Federation / Anti-Spam Methods (Phase 8.2)
     # -----------------------------------------------------------
     async def add_fban(self, user_id: int, reason: str, admin_id: int):

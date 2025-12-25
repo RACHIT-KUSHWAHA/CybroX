@@ -1,97 +1,150 @@
-import os
+
 import google.generativeai as genai
+from openai import AsyncOpenAI
+import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from userbot.helpers.scripts import edit_or_reply
-from userbot.helpers.misc import prefix
+import g4f
+
 from userbot.helpers import config
-from userbot.database.core import CybroDB
+from userbot.helpers.misc import modules_help, prefix
+from userbot.helpers.scripts import edit_or_reply
 
-# Configure Gemini
-# Explicitly look for key in env variable first, then config
-API_KEY = os.getenv("GEMINI_API_KEY")
+# Configure g4f
+g4f.debug.logging = False
 
-if API_KEY:
-    genai.configure(api_key=API_KEY)
-    model = genai.GenerativeModel('gemini-pro')
-else:
-    model = None
+# Initialize Clients
+openai_client = None
+gemini_available = False
+gemini_model = None
 
-# We need access to the database singleton to recall memories for context
-# But importing 'liter' from utils.db might cause circular imports if not careful.
-# Ideally, we just import it.
-from userbot.helpers.db import liter
-
-
-@Client.on_message(filters.command("ask", prefix) & filters.me)
-async def ask_cmd(client: Client, message: Message):
-    """
-    Ask Gemini AI a question.
-    Usage: .ask [prompt]
-    """
-    if not model:
-        await edit_or_reply(message, "<b>❌ GEMINI_API_KEY not found in .env!</b>")
-        return
-
-    cmd = message.command
-    if len(cmd) < 2:
-        await edit_or_reply(message, "<b>🤖 Usage:</b> <code>.ask [prompt]</code>")
-        return
-
-    prompt = " ".join(cmd[1:])
-    msg = await edit_or_reply(message, f"<b>🤖 Thinking:</b> <code>{prompt}</code>")
-
+# OpenAI Init
+if config.OPENAI_API_KEY:
     try:
-        response = await model.generate_content_async(prompt)
-        text = response.text
-        
-        # Markdown formatting
-        await msg.edit(f"<b>🤖 Gemini:</b>\n\n{text}")
+        openai_client = AsyncOpenAI(api_key=config.OPENAI_API_KEY)
     except Exception as e:
-        await msg.edit(f"<b>❌ AI Error:</b> {str(e)}")
+        print(f"Failed to init OpenAI: {e}")
 
-
-@Client.on_message(filters.command("chat", prefix) & filters.me)
-async def chat_cmd(client: Client, message: Message):
-    """
-    Context-aware Chat with Gemini (RAG Lite).
-    Uses last 10 messages from Memory as context.
-    Usage: .chat [prompt]
-    """
-    if not model:
-        await edit_or_reply(message, "<b>❌ GEMINI_API_KEY not found in .env!</b>")
-        return
-
-    cmd = message.command
-    if len(cmd) < 2:
-        await edit_or_reply(message, "<b>🧠 Usage:</b> <code>.chat [prompt]</code>")
-        return
-
-    prompt = " ".join(cmd[1:])
-    msg = await edit_or_reply(message, f"<b>🧠 Recalling Context & Thinking...</b>")
-
+# Gemini Configuration
+gemini_available = False
+if config.GEMINI_API_KEY:
     try:
-        # RAG Step 1: Fetch recent context from FTS (or just recent logs if FTS is for search)
-        # Actually, let's just search the prompt in memory to find RELEVANT context.
-        # This is true RAG.
-        context_results = await liter.search_messages(prompt, limit=5)
-        
-        context_text = ""
-        if context_results:
-            context_text = "\n".join([f"- {r['text']}" for r in context_results])
-        
-        # Construct prompt
-        full_prompt = (
-            f"You are CybroX, a supreme AI assistant. "
-            f"Here is some relevant context from my chat history:\n"
-            f"{context_text}\n\n"
-            f"User Question: {prompt}\n"
-            f"Answer concisely."
+        genai.configure(api_key=config.GEMINI_API_KEY)
+        gemini_available = True
+    except Exception as e:
+        print(f"Failed to init Gemini: {e}")
+
+async def ask_g4f(query):
+    """Fallback to g4f if official API fails"""
+    try:
+        response = await g4f.ChatCompletion.create_async(
+            model=g4f.models.gpt_4o,
+            provider=g4f.Provider.DuckDuckGo,
+            messages=[{"role": "user", "content": query}],
         )
-
-        response = await model.generate_content_async(full_prompt)
-        text = response.text
-        
-        await msg.edit(f"<b>🧠 Gemini (RAG):</b>\n\n{text}")
+        return str(response)
     except Exception as e:
-        await msg.edit(f"<b>❌ AI Error:</b> {str(e)}")
+        return f"❌ g4f Error: {e}"
+
+@Client.on_message(filters.command(["gpt", "code"], prefix) & filters.me)
+async def openai_cmd(client: Client, message: Message):
+    """
+    Ask OpenAI (Official -> Fallback to g4f).
+    Usage: .gpt <query> or .code <query>
+    """
+    if len(message.command) < 2:
+        await edit_or_reply(message, "<b>❌ Usage:</b> <code>.gpt hello</code>")
+        return
+
+    query = message.text.split(maxsplit=1)[1]
+    msg = await edit_or_reply(message, "<b>🧠 AI Thinking...</b>")
+    response = ""
+    used_provider = "OpenAI"
+
+    # Try Official OpenAI First
+    if openai_client:
+        try:
+            chat_completion = await openai_client.chat.completions.create(
+                messages=[{"role": "user", "content": query}],
+                model="gpt-3.5-turbo",
+            )
+            response = chat_completion.choices[0].message.content
+        except Exception as e:
+            print(f"OpenAI Failed: {e}")
+            used_provider = "g4f (Fallback)"
+            response = await ask_g4f(query)
+    else:
+        # No key, go straight to g4f
+        used_provider = "g4f (Free)"
+        response = await ask_g4f(query)
+
+    # Format output
+    if message.command[0] == "code" and "```" not in response:
+        response = f"```\n{response}\n```"
+
+    header = f"<b>✨ AI ({used_provider}):</b>\n"
+    await send_large_output(client, message, msg, header + response)
+
+async def get_valid_gemini_model():
+    """Dynamically find a working model"""
+    try:
+        # Run list_models in thread as it might block
+        models = await asyncio.to_thread(lambda: list(genai.list_models()))
+        for m in models:
+            if 'generateContent' in m.supported_generation_methods:
+                if 'flash' in m.name or 'pro' in m.name:
+                    return m.name
+        # Fallback to first available
+        if models:
+            return models[0].name
+    except Exception as e:
+        print(f"Error listing models: {e}")
+    return "models/gemini-pro"
+
+@Client.on_message(filters.command(["gemini", "gem"], prefix) & filters.me)
+async def gemini_cmd(client: Client, message: Message):
+    """
+    Ask Gemini (Auto-Model).
+    Usage: .gemini <query>
+    """
+    if not gemini_available:
+        await edit_or_reply(message, "<b>❌ Gemini Config Error.</b> Check logs/key.")
+        return
+
+    if len(message.command) < 2:
+        await edit_or_reply(message, "<b>❌ Usage:</b> <code>.gemini hello</code>")
+        return
+
+    query = message.text.split(maxsplit=1)[1]
+    msg = await edit_or_reply(message, "<b>✨ Gemini Thinking...</b>")
+
+    try:
+        # Find model dynamically
+        model_name = await get_valid_gemini_model()
+        
+        # Run generation
+        response = await client.loop.run_in_executor(None, generate_gemini_content, model_name, query)
+        await send_large_output(client, message, msg, f"<b>♊ Gemini ({model_name}):</b>\n{response}")
+    except Exception as e:
+        await msg.edit(f"<b>❌ Gemini Error:</b> {str(e)}")
+
+def generate_gemini_content(model_name, query):
+    model = genai.GenerativeModel(model_name)
+    response = model.generate_content(query)
+    return response.text
+
+async def send_large_output(client, message, msg, text):
+    if len(text) > 4096:
+        await msg.delete()
+        # Split logic could be better but keeping simple
+        await client.send_message(message.chat.id, text[:4096])
+        if len(text) > 4096:
+             await client.send_message(message.chat.id, text[4096:])
+    else:
+        await msg.edit(text)
+
+modules_help["ai"] = {
+    "gpt <query>": "Ask AI (OpenAI + Free Fallback)",
+    "code <query>": "Generate Code",
+    "gemini <query>": "Ask Google Gemini",
+}

@@ -34,7 +34,7 @@ async def alive_command(client: Client, message: Message):
     await message.edit(
         f"<b>🔥 CybroX-UserBot is alive!</b>\n\n"
         f"<b>Version:</b> <code>{userbot_version}</code>\n"
-        f"<b>Pyrogram:</b> <code>{'.'.join(str(x) for x in client.pyrogram_version)}</code>\n"
+        f"<b>Pyrogram:</b> <code>{__import__('pyrogram').__version__}</code>\n"
         f"<b>Prefix:</b> <code>{prefix}</code>"
     )
 

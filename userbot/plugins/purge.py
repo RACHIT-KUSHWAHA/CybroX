@@ -18,9 +18,69 @@ from userbot.helpers.scripts import edit_or_reply, with_reply
 
 @Client.on_message(filters.command("purge", prefix) & filters.me)
 async def purge_cmd(client: Client, message: Message):
-    """Delete all messages between replied and current"""
+    """Delete messages. Reply to start point, OR use time argument (.purge 2h)."""
+    
+    # Mode 1: Time-based Purge
+    if len(message.command) > 1:
+        arg = message.command[1]
+        seconds = 0
+        try:
+            if arg.endswith("s"): seconds = int(arg[:-1])
+            elif arg.endswith("m"): seconds = int(arg[:-1]) * 60
+            elif arg.endswith("h"): seconds = int(arg[:-1]) * 3600
+            elif arg.endswith("d"): seconds = int(arg[:-1]) * 86400
+            else: seconds = int(arg)  # Default to seconds? Or fail.
+        except ValueError:
+            await edit_or_reply(message, "<b>❌ Invalid format! Use 30s, 5m, 2h.</b>")
+            return
+            
+        if seconds <= 0:
+             return
+
+        msg = await edit_or_reply(message, f"<b>🧹 Purging last {arg}...</b>")
+        cutoff_time = time.time() - seconds
+        
+        chat_id = message.chat.id
+        message_ids = []
+        count = 0
+        
+        async for hist_msg in client.get_chat_history(chat_id):
+            # Stop if we reach messages older than cutoff
+            if hist_msg.date.timestamp() < cutoff_time:
+                break
+            
+            # Don't delete the command message or confirmation yet
+            if hist_msg.id == msg.id:
+                continue
+                
+            message_ids.append(hist_msg.id)
+            count += 1
+            
+            if len(message_ids) >= 100:
+                try:
+                    await client.delete_messages(chat_id, message_ids)
+                except FloodWait as e:
+                    await asyncio.sleep(e.value)
+                    await client.delete_messages(chat_id, message_ids)
+                except MessageDeleteForbidden:
+                    pass
+                message_ids = []
+                await asyncio.sleep(0.5)
+
+        if message_ids:
+             try:
+                await client.delete_messages(chat_id, message_ids)
+             except: pass
+        
+        await msg.edit(f"<b>🧹 Purged messages from last {arg}!</b>")
+        await asyncio.sleep(3)
+        await msg.delete()
+        return
+
+    # Mode 2: Reply-based Purge (Legacy)
     replied = await with_reply(message)
     if not replied:
+        await edit_or_reply(message, "<b>❌ Reply to a message or use time (e.g., .purge 10m)</b>")
         return
         
     msg = await edit_or_reply(message, "<b>🧹 Purging messages...</b>")
@@ -29,6 +89,12 @@ async def purge_cmd(client: Client, message: Message):
     chat_id = message.chat.id
     
     # Get all message IDs to delete
+    # [Rest of legacy logic]
+    # Note: Using get_chat_history usually better than range if IDs are not sequential, 
+    # but range is faster if they are. Pyrogram IDs are sequential per chat usually.
+    # We will keep the original range logic for consistency if keys are sequential.
+    # However, to be safe, we'll execute the original logic below.
+    
     for message_id in range(replied.id, message.id + 1):
         message_ids.append(message_id)
         
@@ -64,13 +130,18 @@ async def purge_cmd(client: Client, message: Message):
     )
     
     # Delete success message after 5 seconds
-    msg_info = await client.send_message(
+    # msg acts as our status message, we can just delete it or the new one
+    try:
+        await msg.delete()
+    except: pass  # In case it was deleted
+    
+    succ_msg = await client.send_message(
         chat_id,
         f"<b>✅ Success message will be deleted in 5 seconds.</b>",
         disable_notification=True
     )
     await asyncio.sleep(5)
-    await client.delete_messages(chat_id, msg_info.id)
+    await succ_msg.delete()
 
 
 @Client.on_message(filters.command("del", prefix) & filters.me)
