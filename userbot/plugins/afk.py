@@ -15,25 +15,28 @@ from pyrogram.types import Message
 import humanize
 
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
-from userbot.helpers.db import db
+from userbot.core.managers import edit_or_reply
+from userbot.database.afk_db import afk_data, set_afk_data
 
 
 @Client.on_message(filters.command("afk", prefix) & filters.me)
 async def afk_cmd(client: Client, message: Message):
     """Set your status as AFK (Away From Keyboard)"""
     # Get reason if provided
+    db = afk_data()
     if len(message.command) > 1:
         reason = message.text.split(None, 1)[1]
     else:
         reason = "No reason specified"
     
     # Save AFK info to database
-    await db.set("afk", "afk_status", True)
-    await db.set("afk", "afk_reason", reason)
-    await db.set("afk", "afk_time", time.time())
-    await db.set("afk", "afk_mentions", [])
-    
+    set_afk_data({
+        "afk_status": True,
+        "afk_reason": reason,
+        "afk_time": time.time(),
+        "afk_mentions": []
+    })
+
     # Update user's first name to indicate AFK status
     # Only if setting is enabled
     if await db.get("afk", "rename_profile", True):
@@ -57,19 +60,20 @@ async def afk_cmd(client: Client, message: Message):
 @Client.on_message(filters.incoming & ~filters.bot & filters.private, group=10)
 async def afk_private_handler(client: Client, message: Message):
     """Handle incoming private messages when AFK"""
-    if not await db.get("afk", "afk_status", False):
+    db = afk_data()
+    if not db.get("afk_status", False):
         return
     
     # Get AFK info
-    afk_time = await db.get("afk", "afk_time", 0)
-    afk_reason = await db.get("afk", "afk_reason", "No reason specified")
-    
+    afk_time = db.get("afk_time", 0)
+    afk_reason = db.get("afk_reason", "No reason specified")
+
     # Calculate time difference
     time_diff = time.time() - afk_time
     time_humanized = humanize.naturaltime(datetime.timedelta(seconds=int(time_diff)))
     
     # Store message for later viewing
-    mentions = await db.get("afk", "afk_mentions", [])
+    mentions = db.get("afk_mentions", [])
     mentions.append({
         "user_id": message.from_user.id,
         "username": message.from_user.username,
@@ -102,7 +106,8 @@ async def afk_private_handler(client: Client, message: Message):
 @Client.on_message(filters.incoming & ~filters.bot & filters.group, group=10)
 async def afk_group_handler(client: Client, message: Message):
     """Handle mentions in groups when AFK"""
-    if not await db.get("afk", "afk_status", False):
+    db = afk_data()
+    if not db.get("afk_status", False):
         return
     
     # Only process if user is mentioned or message is a reply to the user
@@ -112,15 +117,15 @@ async def afk_group_handler(client: Client, message: Message):
         return
     
     # Get AFK info
-    afk_time = await db.get("afk", "afk_time", 0)
-    afk_reason = await db.get("afk", "afk_reason", "No reason specified")
-    
+    afk_time = db.get("afk_time", 0)
+    afk_reason = db.get("afk_reason", "No reason specified")
+
     # Calculate time difference
     time_diff = time.time() - afk_time
     time_humanized = humanize.naturaltime(datetime.timedelta(seconds=int(time_diff)))
     
     # Store mention for later viewing
-    mentions = await db.get("afk", "afk_mentions", [])
+    mentions = db.get("afk_mentions", [])
     mentions.append({
         "user_id": message.from_user.id,
         "username": message.from_user.username,
@@ -153,6 +158,7 @@ async def afk_group_handler(client: Client, message: Message):
 @Client.on_message(filters.me, group=11)
 async def unafk_handler(client: Client, message: Message):
     """Handle the user's return from AFK status"""
+    db = afk_data()
     # Skip commands
     if message.text and message.text.startswith(prefix):
         return
@@ -160,8 +166,8 @@ async def unafk_handler(client: Client, message: Message):
     # Skip the command itself
     if message.text and message.text.split()[0] == f"{prefix}afk":
         return
-        
-    if await db.get("afk", "afk_status", False):
+
+    if db.get("afk_status", False):
         # Calculate AFK time
         afk_time = await db.get("afk", "afk_time", 0)
         time_diff = time.time() - afk_time
@@ -202,8 +208,9 @@ async def unafk_handler(client: Client, message: Message):
 @Client.on_message(filters.command(["afklog", "afkm", "mentions"], prefix) & filters.me)
 async def afk_log_cmd(client: Client, message: Message):
     """View messages received while AFK"""
-    mentions = await db.get("afk", "afk_mentions", [])
-    
+    db = afk_data()
+    mentions = db.get("afk_mentions", [])
+
     if not mentions:
         await edit_or_reply(message, "<b>📪 No messages received while you were AFK.</b>")
         return
@@ -259,24 +266,25 @@ async def afk_log_cmd(client: Client, message: Message):
 @Client.on_message(filters.command("afkinfo", prefix) & filters.me)
 async def afk_info_cmd(client: Client, message: Message):
     """Show current AFK settings"""
-    is_afk = await db.get("afk", "afk_status", False)
-    rename_profile = await db.get("afk", "rename_profile", True)
-    
+    db = afk_data()
+    is_afk = db.get("afk_status", False)
+    rename_profile = db.get("rename_profile", True)
+
     text = "<b>⚙️ AFK Settings:</b>\n\n"
     text += f"<b>Current status:</b> {'🌙 AFK' if is_afk else '🌞 Not AFK'}\n"
     text += f"<b>Auto rename profile:</b> {'✅ Enabled' if rename_profile else '❌ Disabled'}\n"
     
     if is_afk:
-        afk_time = await db.get("afk", "afk_time", 0)
-        afk_reason = await db.get("afk", "afk_reason", "No reason specified")
+        afk_time = db.get("afk_time", 0)
+        afk_reason = db.get("afk_reason", "No reason specified")
         
         time_diff = time.time() - afk_time
         time_humanized = humanize.naturaldelta(datetime.timedelta(seconds=int(time_diff)))
         
         text += f"\n<b>AFK duration:</b> {time_humanized}\n"
         text += f"<b>AFK reason:</b> {html.escape(afk_reason)}\n"
-        
-        mentions = await db.get("afk", "afk_mentions", [])
+
+        mentions = db.get("afk_mentions", [])
         text += f"<b>Messages received:</b> {len(mentions)}"
     
     await edit_or_reply(message, text)
@@ -285,11 +293,14 @@ async def afk_info_cmd(client: Client, message: Message):
 @Client.on_message(filters.command(["toggleafkrename", "afkr"], prefix) & filters.me)
 async def toggle_afk_rename_cmd(client: Client, message: Message):
     """Toggle automatic profile renaming during AFK"""
-    current_setting = await db.get("afk", "rename_profile", True)
+    db = afk_data()
+    current_setting = db.get("rename_profile", True)
     new_setting = not current_setting
-    
-    await db.set("afk", "rename_profile", new_setting)
-    
+
+    set_afk_data({
+        "rename_profile": new_setting
+    })
+
     if new_setting:
         await edit_or_reply(message, "<b>✅ Auto rename profile during AFK enabled.</b>")
     else:

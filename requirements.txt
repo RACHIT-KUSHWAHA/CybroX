@@ -9,8 +9,8 @@ aiohttp>=3.8.4
 aiofiles>=23.1.0
 Pillow>=10.3.0
 psutil>=5.9.5
-humanize>=4.6.0
-GitPython
+humanize>=4.15.0
+GitPython>=3.1.30
 yt-dlp
 
 pySmartDL>=1.3.4
