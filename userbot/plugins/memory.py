@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram.types import Message, LinkPreviewOptions
 from userbot.helpers.managers import edit_or_reply
 from userbot.helpers.db import liter
 from userbot.helpers.misc import prefix
@@ -83,7 +83,7 @@ async def recall_cmd(client: Client, message: Message):
         else:
             out += f"• [{ts_str}] (Chat {chat_id}): {text}\n"
 
-    await msg.edit(out, disable_web_page_preview=True)
+    await msg.edit(out, link_preview_options=LinkPreviewOptions(is_disabled=True))
 
 
 @Client.on_message(filters.command("wipe_memory", prefix) & filters.me)

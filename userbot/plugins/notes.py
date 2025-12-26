@@ -8,7 +8,7 @@
 
 import asyncio
 from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram.types import Message, LinkPreviewOptions
 
 from userbot.helpers.misc import modules_help, prefix
 from userbot.helpers.managers import edit_or_reply, with_reply
@@ -118,13 +118,13 @@ async def get_note(client: Client, message: Message):
         await client.send_message(
             message.chat.id,
             note["content"],
-            disable_web_page_preview=True
+            link_preview_options=LinkPreviewOptions(is_disabled=False)
         )
     elif note["type"] == "caption":
         await client.send_message(
             message.chat.id,
             note["content"],
-            disable_web_page_preview=True
+            link_preview_options=LinkPreviewOptions(is_disabled=False)
         )
     elif note["type"] == "photo":
         await client.send_photo(

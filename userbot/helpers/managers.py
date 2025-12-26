@@ -1,7 +1,7 @@
 import asyncio
 import os
 from pyrogram.enums import ParseMode
-from pyrogram.types import Message
+from pyrogram.types import Message, LinkPreviewOptions
 from userbot.helpers.utils.format import md_to_text, paste_message
 from userbot.database.sudouser_db import sudousers_list
 
@@ -52,7 +52,7 @@ async def edit_or_reply(
             )
         except Exception:
             # Fallback if edit fails (e.g., message too old or type mismatch) - Rare but possible
-            return await message.reply_text(text, parse_mode=parse_mode, disable_web_page_preview=not link_preview)
+            return await message.reply_text(text, parse_mode=parse_mode, link_preview_options=LinkPreviewOptions())
         
         return message
 
@@ -67,10 +67,10 @@ async def edit_or_reply(
 
         if message.from_user and message.from_user.id in sudo_users:
             if reply_to:
-                return await reply_to.reply_text(text, disable_web_page_preview=not link_preview)
-            return await message.reply_text(text, disable_web_page_preview=not link_preview)
+                return await reply_to.reply_text(text, link_preview_options=LinkPreviewOptions())
+            return await message.reply_text(text, link_preview_options=LinkPreviewOptions())
 
-        await message.edit_text(text, disable_web_page_preview=not link_preview)
+        await message.edit_text(text, link_preview_options=LinkPreviewOptions())
         return message
 
     # 3. File Fallback
