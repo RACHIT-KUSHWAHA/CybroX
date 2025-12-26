@@ -146,7 +146,7 @@ class UniversalDBManager:
             # 3. Write to LocalDB (Fallback)
             await self._write_local(collection, key, json_val)
 
-    async def get(self, collection: str, key: str) -> Optional[Any]:
+    async def get(self, collection: str, key: str, default: Any = None) -> Optional[Any]:
         """
         Reads data with Read-Aside / Fallback strategy.
         Sequence: Redis -> Mongo -> LocalDB
@@ -174,7 +174,8 @@ class UniversalDBManager:
                 LOG.error(f"Mongo Read Failed (Falling back to LocalDB): {e}")
 
         # 3. Try LocalDB
-        return await self._read_local(collection, key)
+        res = await self._read_local(collection, key)
+        return res if res is not None else default
 
     async def delete(self, collection: str, key: str):
         """Deletes from all layers."""

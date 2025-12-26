@@ -90,7 +90,7 @@ def get_thumb(name=None, url=None):
     if url:
         return url
     # Default fallback
-    return "https://telegra.ph/file/a7585093557cfc7075253.jpg"
+    return "https://downloads.codinginfinite.com/wp-content/uploads/2022/11/banner-28-1.png"
 
 def main_menu_buttons():
     """Generate the main menu buttons similar to CatUserBot."""
@@ -182,7 +182,7 @@ if app.assistant:
                 InlineBuilder.photo(
                     title="LegendBot Alive",
                     description="Check Bot Status",
-                    photo_url=config.ALIVE_PIC if hasattr(config, "ALIVE_PIC") and config.ALIVE_PIC else "https://telegra.ph/file/a7585093557cfc7075253.jpg",
+                    photo_url=config.ALIVE_PIC if hasattr(config, "ALIVE_PIC") and config.ALIVE_PIC else "https://downloads.codinginfinite.com/wp-content/uploads/2022/11/banner-28-1.png",
                     caption=alive_text,
                     buttons=buttons
                 )

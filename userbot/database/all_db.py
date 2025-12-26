@@ -1,6 +1,7 @@
 import ast
 import os
 import sys
+import json
 
 from userbot.helpers.config import (
     DATABASE_URL,
@@ -36,12 +37,8 @@ elif DATABASE_URL:
         os.system(f"{sys.executable} -m pip install -q psycopg2-binary")
         import psycopg2
 else:
-    try:
-        from localdb import Database
-    except ImportError:
-        LOGS.info("Using local file as database.")
-        os.system(f"{sys.executable} -m pip install -q localdb.json")
-        from localdb import Database
+    # Use internal JSON implementation
+    pass
 
 # --------------------------------------------------------------------------------------------- #
 
@@ -333,18 +330,48 @@ class RedisDB(_BaseDatabase):
 
 class LocalDB(_BaseDatabase):
     def __init__(self):
-        self.db = Database("legend")
-        self.get = self.db.get
-        self.set = self.db.set
-        self.delete = self.db.delete
+        self.filename = "legend.json"
+        if not os.path.exists(self.filename):
+            with open(self.filename, 'w', encoding='utf-8') as f:
+                json.dump({}, f)
         super().__init__()
 
     @property
     def name(self):
         return "LocalDB"
 
+    def _load_data(self):
+        try:
+            with open(self.filename, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, FileNotFoundError):
+            return {}
+
+    def _save_data(self, data):
+        with open(self.filename, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+
+    def get(self, key):
+        data = self._load_data()
+        return data.get(str(key))
+
+    def set(self, key, value):
+        data = self._load_data()
+        data[str(key)] = value
+        self._save_data(data)
+        return True
+
+    def delete(self, key):
+        data = self._load_data()
+        if str(key) in data:
+            del data[str(key)]
+            self._save_data(data)
+            return True
+        return False
+
     def keys(self):
-        return self._cache.keys()
+        data = self._load_data()
+        return list(data.keys())
 
     def __repr__(self):
         return f"<Legend.LocalDB\n -total_keys: {len(self.keys())}\n>"

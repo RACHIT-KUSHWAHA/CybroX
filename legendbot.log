@@ -448,3 +448,443 @@ pyrogram.errors.exceptions.bad_request_400.WebpageMediaEmpty: Telegram says: [40
 2025-12-26 14:51:11,086 - pyrogram.connection.connection - INFO - Disconnected
 2025-12-26 14:51:11,086 - pyrogram.session.session - INFO - Session stopped
 2025-12-26 14:51:11,092 - Legendbot - INFO - Legendbot: Offline.
+2025-12-26 19:53:21,671 - root - INFO - Config Loaded. Sudo Users: 0
+2025-12-26 19:53:23,141 - Legendbot - INFO - Legendbot: Initializing Database...
+2025-12-26 19:53:23,141 - LegendDB - INFO - Initializing Legendbot Universal Database...
+2025-12-26 19:53:23,173 - LegendDB - INFO - LocalDB (SQLite) Initialized.
+2025-12-26 19:53:23,174 - LegendDB - WARNING - No MONGO_URI provided. Switching to Local Mode.
+2025-12-26 19:53:23,175 - LegendDB - WARNING - Running in Pure Local Mode (No Cloud, No Cache). Data is stored in 'legendbot.db'.
+2025-12-26 19:53:23,175 - Legendbot - INFO - Legendbot: Starting Assistant Bot...
+2025-12-26 19:53:23,178 - pyrogram.session.auth - INFO - Start creating a new auth key on DC2
+2025-12-26 19:53:23,181 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:53:23,202 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 19:53:26,913 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-12-26 19:53:26,914 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 19:53:26,915 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:53:27,671 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 19:53:27,674 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:53:29,077 - pyrogram.client - INFO - Time synced: 2025-12-26 19:53:24.346071
+2025-12-26 19:53:31,842 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 19:53:31,844 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 19:53:31,844 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 19:53:31,845 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 19:53:31,846 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:53:31,934 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 19:53:31,936 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:53:32,901 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 19:53:32,902 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 19:53:32,903 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 19:53:32,903 - pyrogram.session.session - INFO - Session started
+2025-12-26 19:53:32,904 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 19:53:34,022 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 19:53:34,024 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 19:53:34,024 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 19:53:34,025 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 19:53:34,026 - pyrogram.session.auth - INFO - Start creating a new auth key on DC5
+2025-12-26 19:53:34,026 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:53:34,050 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 19:53:37,363 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-12-26 19:53:37,364 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 19:53:37,364 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:53:37,438 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 19:53:37,440 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:53:40,740 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 19:53:40,742 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 19:53:40,742 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 19:53:40,744 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 19:53:40,745 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:53:41,221 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 19:53:41,225 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:53:41,537 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 19:53:41,539 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 19:53:41,540 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 19:53:41,540 - pyrogram.session.session - INFO - Session started
+2025-12-26 19:53:41,542 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 19:53:41,926 - pyrogram.dispatcher - INFO - Started 16 HandlerTasks
+2025-12-26 19:53:42,037 - Legendbot - INFO - Legendbot: Assistant Started as @AndroDznsBot
+2025-12-26 19:53:42,038 - Legendbot - INFO - Legendbot: Connecting to Telegram...
+2025-12-26 19:53:43,225 - legendbot - CRITICAL - No DB requirement fullfilled!
+Please install redis, mongo or sql dependencies...
+Till then using local file as database.
+2025-12-26 19:53:43,228 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ban_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,229 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unban_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,229 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("mute_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,230 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unmute_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,230 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("kick_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,230 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("pin_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,232 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unpin_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,232 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("promote_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,233 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("demote_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,234 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("admins_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,234 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("bots_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 19:53:43,282 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 19:53:43,282 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_private_handler") in group 10 from "userbot.plugins.afk"
+2025-12-26 19:53:43,282 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_group_handler") in group 10 from "userbot.plugins.afk"
+2025-12-26 19:53:43,283 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unafk_handler") in group 11 from "userbot.plugins.afk"
+2025-12-26 19:53:43,283 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_log_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 19:53:43,284 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_info_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 19:53:43,284 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("toggle_afk_rename_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 19:54:07,931 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("openai_cmd") in group 0 from "userbot.plugins.ai"
+2025-12-26 19:54:07,931 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("gemini_cmd") in group 0 from "userbot.plugins.ai"
+2025-12-26 19:54:07,937 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("carbon_cmd") in group 0 from "userbot.plugins.carbon"
+2025-12-26 19:54:07,945 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("type_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 19:54:07,946 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("upload_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 19:54:07,948 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("game_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 19:54:07,948 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("video_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 19:54:07,949 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("voice_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 19:54:07,953 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("fban_cmd") in group 0 from "userbot.plugins.federation"
+2025-12-26 19:54:07,954 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unfban_cmd") in group 0 from "userbot.plugins.federation"
+2025-12-26 19:54:07,954 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("fed_watcher") in group 0 from "userbot.plugins.federation"
+2025-12-26 19:54:07,958 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("forensics_cmd") in group 0 from "userbot.plugins.forensics"
+2025-12-26 19:54:07,958 - pyrogram.client - INFO - [legendbot] [LOAD] EditedMessageHandler("edit_logger") in group 0 from "userbot.plugins.forensics"
+2025-12-26 19:54:07,965 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("coin_cmd") in group 0 from "userbot.plugins.fun"
+2025-12-26 19:54:07,966 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("dice_cmd") in group 0 from "userbot.plugins.fun"
+2025-12-26 19:54:07,966 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("meme_cmd") in group 0 from "userbot.plugins.fun"
+2025-12-26 19:54:07,969 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ghost_cmd") in group 0 from "userbot.plugins.ghost"
+2025-12-26 19:54:07,970 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ghost_watcher") in group 1 from "userbot.plugins.ghost"
+2025-12-26 19:54:07,972 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("help_cmd") in group 0 from "userbot.plugins.help"
+2025-12-26 19:54:07,972 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("modules_cmd") in group 0 from "userbot.plugins.help"
+2025-12-26 19:54:07,979 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("whois_cmd") in group 0 from "userbot.plugins.info"
+2025-12-26 19:54:07,980 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("id_cmd") in group 0 from "userbot.plugins.info"
+2025-12-26 19:54:07,981 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sysinfo_cmd") in group 0 from "userbot.plugins.info"
+2025-12-26 19:54:07,989 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("song_cmd") in group 0 from "userbot.plugins.media"
+2025-12-26 19:54:07,990 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("video_cmd") in group 0 from "userbot.plugins.media"
+2025-12-26 19:54:08,002 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("memory_watcher") in group -1 from "userbot.plugins.memory"
+2025-12-26 19:54:08,003 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("recall_cmd") in group 0 from "userbot.plugins.memory"
+2025-12-26 19:54:08,004 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("wipe_memory_cmd") in group 0 from "userbot.plugins.memory"
+2025-12-26 19:54:08,012 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("save_note") in group 0 from "userbot.plugins.notes"
+2025-12-26 19:54:08,013 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("get_note") in group 0 from "userbot.plugins.notes"
+2025-12-26 19:54:08,014 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("list_notes") in group 0 from "userbot.plugins.notes"
+2025-12-26 19:54:08,015 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("clear_note") in group 0 from "userbot.plugins.notes"
+2025-12-26 19:54:08,019 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("force_backup") in group 0 from "userbot.plugins.persistence"
+2025-12-26 19:54:08,024 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("alive_command") in group 0 from "userbot.plugins.ping"
+2025-12-26 19:54:08,025 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ping_cmd") in group 0 from "userbot.plugins.ping"
+2025-12-26 19:54:08,029 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("purge_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 19:54:08,030 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("del_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 19:54:08,031 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("selfdestruct_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 19:54:08,032 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("clear_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 19:54:08,032 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("purgeme_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 19:54:08,034 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("scan_cmd") in group 0 from "userbot.plugins.sentinel"
+2025-12-26 19:54:08,040 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("kang_cmd") in group 0 from "userbot.plugins.stickers"
+2025-12-26 19:54:08,041 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sticker_info_cmd") in group 0 from "userbot.plugins.stickers"
+2025-12-26 19:54:08,125 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("restart_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 19:54:08,126 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("update_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 19:54:08,126 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sysinfo_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 19:54:08,130 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("type_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 19:54:08,132 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("mock_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 19:54:08,132 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("vapor_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 19:54:08,133 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("zalgo_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 19:54:08,133 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("reverse_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 19:54:08,133 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("spam_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 19:54:08,133 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("dspam_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 19:54:08,136 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("zombies_cmd") in group 0 from "userbot.plugins.zombies"
+2025-12-26 19:54:08,137 - pyrogram.client - INFO - [legendbot] Successfully loaded 72 plugins from "userbot.plugins"
+2025-12-26 19:54:08,140 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:54:08,142 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+2025-12-26 19:54:08,142 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 19:54:08,143 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 19:54:08,143 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 19:54:08,144 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 19:54:08,144 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:54:08,178 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 19:54:08,180 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 19:54:08,183 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:54:08,184 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:54:08,576 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 19:54:08,577 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 19:54:08,577 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 19:54:08,578 - pyrogram.session.session - INFO - Session started
+2025-12-26 19:54:08,578 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 19:54:10,195 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 19:54:10,197 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 19:54:10,197 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 19:54:10,198 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 19:54:10,198 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:54:10,567 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 19:54:10,570 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:54:10,737 - pyrogram.client - INFO - Time synced: 2025-12-26 19:54:06.059367
+2025-12-26 19:54:11,373 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 19:54:11,373 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 19:54:11,373 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 19:54:11,375 - pyrogram.session.session - INFO - Session started
+2025-12-26 19:54:11,375 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 19:54:11,967 - pyrogram.dispatcher - INFO - Started 16 HandlerTasks
+2025-12-26 19:54:12,740 - root - INFO - Legendbot Started Successfully
+2025-12-26 19:54:12,742 - root - INFO - Persistence: Backup loop started.
+2025-12-26 19:54:50,240 - userbot.plugins.ping - INFO - DEBUG: Alive Cmd Entered. Client: <userbot.core.client.Legendbot object at 0x00000243699DE840>, Assistant: <pyrogram.client.Client object at 0x000002436A5A95B0>
+2025-12-26 19:54:56,779 - userbot.plugins.ping - ERROR - DEBUG: Inline Alive Failed: Telegram says: [400 WEBPAGE_MEDIA_EMPTY] - The URL doesn't contain any valid media. (caused by "messages.SendInlineBotResult")
+Traceback (most recent call last):
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\ping.py", line 28, in alive_command
+    await client.send_inline_bot_result(
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\methods\bots\send_inline_bot_result.py", line 151, in send_inline_bot_result
+    r = await self.invoke(
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\methods\advanced\invoke.py", line 107, in invoke
+    r = await session.invoke(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\session\session.py", line 551, in invoke
+    return await self.send(query, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\session\session.py", line 514, in send
+    RPCError.raise_it(result, type(data))
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\errors\rpc_error.py", line 91, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.WebpageMediaEmpty: Telegram says: [400 WEBPAGE_MEDIA_EMPTY] - The URL doesn't contain any valid media. (caused by "messages.SendInlineBotResult")
+2025-12-26 19:55:22,448 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 19:55:22,473 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 19:55:22,475 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 19:55:24,572 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 19:55:24,572 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 19:55:24,573 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 19:55:24,574 - pyrogram.session.session - INFO - Session started
+2025-12-26 19:55:24,576 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 19:56:23,425 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\notes.py", line 169, in list_notes
+    notes = await db.get("notes", "notes", {})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:56:43,465 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\notes.py", line 82, in save_note
+    notes = await db.get("notes", "notes", {})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:56:53,038 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\notes.py", line 105, in get_note
+    notes = await db.get("notes", "notes", {})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:57:15,924 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 43, in afk_cmd
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:57:22,847 - pyrogram.dispatcher - ERROR - 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 95, in afk_private_handler
+    set_afk_data(afk_state)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\afk_db.py", line 12, in set_afk_data
+    legend_db.set_key("AFK_DATA", afk_dict)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\all_db.py", line 122, in set_key
+    return self.set(str(key), value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\localdb\__init__.py", line 50, in set
+    dbfile.write(str(data))
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+2025-12-26 19:57:25,117 - pyrogram.dispatcher - ERROR - 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 95, in afk_private_handler
+    set_afk_data(afk_state)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\afk_db.py", line 12, in set_afk_data
+    legend_db.set_key("AFK_DATA", afk_dict)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\all_db.py", line 122, in set_key
+    return self.set(str(key), value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\localdb\__init__.py", line 50, in set
+    dbfile.write(str(data))
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+2025-12-26 19:57:26,455 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 183, in unafk_handler
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:57:29,434 - pyrogram.dispatcher - ERROR - 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 95, in afk_private_handler
+    set_afk_data(afk_state)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\afk_db.py", line 12, in set_afk_data
+    legend_db.set_key("AFK_DATA", afk_dict)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\all_db.py", line 122, in set_key
+    return self.set(str(key), value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\localdb\__init__.py", line 50, in set
+    dbfile.write(str(data))
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+2025-12-26 19:57:29,720 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 183, in unafk_handler
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:57:38,300 - pyrogram.dispatcher - ERROR - 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 95, in afk_private_handler
+    set_afk_data(afk_state)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\afk_db.py", line 12, in set_afk_data
+    legend_db.set_key("AFK_DATA", afk_dict)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\all_db.py", line 122, in set_key
+    return self.set(str(key), value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\localdb\__init__.py", line 50, in set
+    dbfile.write(str(data))
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+2025-12-26 19:57:45,077 - pyrogram.dispatcher - ERROR - 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 95, in afk_private_handler
+    set_afk_data(afk_state)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\afk_db.py", line 12, in set_afk_data
+    legend_db.set_key("AFK_DATA", afk_dict)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\database\all_db.py", line 122, in set_key
+    return self.set(str(key), value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\localdb\__init__.py", line 50, in set
+    dbfile.write(str(data))
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 185-191: character maps to <undefined>
+2025-12-26 19:58:02,757 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 183, in unafk_handler
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:58:29,993 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 183, in unafk_handler
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:58:31,921 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 183, in unafk_handler
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 19:58:33,565 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 183, in unafk_handler
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 20:00:00,637 - pyrogram.dispatcher - ERROR - UniversalDBManager.get() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\afk.py", line 183, in unafk_handler
+    if await core_db.get("afk", "rename_profile", True):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: UniversalDBManager.get() takes 3 positional arguments but 4 were given
+2025-12-26 20:00:25,102 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+2025-12-26 20:00:25,103 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 20:00:25,104 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 20:00:25,106 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 20:00:25,106 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 20:00:25,107 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:00:25,122 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 20:00:25,126 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 20:00:27,120 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 20:00:27,122 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 20:00:27,122 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 20:00:27,122 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 20:00:27,123 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:00:27,142 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 20:00:27,145 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 20:00:28,418 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 20:00:28,418 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 20:00:28,419 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 20:00:28,419 - pyrogram.session.session - INFO - Session started
+2025-12-26 20:00:28,420 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 20:01:04,982 - root - INFO - Config Loaded. Sudo Users: 0
+2025-12-26 20:01:04,985 - legendbot - CRITICAL - No DB requirement fullfilled!
+Please install redis, mongo or sql dependencies...
+Till then using local file as database.
+2025-12-26 20:01:26,724 - root - INFO - Config Loaded. Sudo Users: 0
+2025-12-26 20:01:26,725 - legendbot - CRITICAL - No DB requirement fullfilled!
+Please install redis, mongo or sql dependencies...
+Till then using local file as database.
+2025-12-26 20:01:27,239 - LegendDB - INFO - Initializing Legendbot Universal Database...
+2025-12-26 20:01:27,249 - LegendDB - INFO - LocalDB (SQLite) Initialized.
+2025-12-26 20:01:27,249 - LegendDB - WARNING - No MONGO_URI provided. Switching to Local Mode.
+2025-12-26 20:01:27,251 - LegendDB - WARNING - Running in Pure Local Mode (No Cloud, No Cache). Data is stored in 'legendbot.db'.
+2025-12-26 20:01:52,367 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+2025-12-26 20:01:52,379 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 20:01:52,386 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+2025-12-26 20:01:52,392 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 20:01:52,393 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+2025-12-26 20:01:52,400 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 20:01:52,407 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 20:01:52,428 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 20:01:52,442 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 20:01:52,450 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 20:01:52,469 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 20:01:52,492 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:01:52,513 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 20:01:52,545 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 20:01:52,557 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:01:52,567 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 20:01:52,574 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 20:01:52,590 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:01:52,597 - pyrogram.connection.connection - WARNING - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+2025-12-26 20:01:52,620 - pyrogram.connection.connection - WARNING - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+2025-12-26 20:01:52,623 - pyrogram.connection.connection - WARNING - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+2025-12-26 20:01:53,647 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:01:53,700 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:01:53,765 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 20:01:53,805 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 20:01:53,843 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 20:01:53,895 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 20:01:53,901 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 20:01:53,920 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 20:01:53,931 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 20:01:54,843 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 20:01:54,844 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 20:01:54,846 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 20:01:54,848 - pyrogram.session.session - INFO - Session started
+2025-12-26 20:01:54,848 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 20:01:54,932 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 20:01:54,933 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 20:01:54,934 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 20:01:54,941 - pyrogram.session.session - INFO - Session started
+2025-12-26 20:01:54,957 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 20:01:55,116 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 20:01:55,120 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 20:01:55,121 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 20:01:55,122 - pyrogram.session.session - INFO - Session started
+2025-12-26 20:01:55,123 - pyrogram.session.session - INFO - PingTask started

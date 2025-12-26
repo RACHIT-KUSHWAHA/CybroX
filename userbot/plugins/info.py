@@ -8,6 +8,7 @@ import sys
 import time
 import platform
 import datetime
+import pyrogram
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message, User
 
@@ -140,7 +141,7 @@ async def sysinfo_cmd(client: Client, message: Message):
     
     text = f"<b>🤖 Legendbot System Info</b>\n\n"
     text += f"<b>🐍 Python:</b> <code>{python_version}</code>\n"
-    text += f"<b>🔥 Pyrogram:</b> <code>{'.'.join(str(x) for x in client.pyrogram_version)}</code>\n"
+    text += f"<b>🔥 Pyrogram:</b> <code>{pyrogram.__version__}</code>\n"
     text += f"<b>📦 Version:</b> <code>{userbot_version}</code>\n"
     text += f"<b>💻 OS:</b> <code>{platform.system()} {platform.release()}</code>\n"
     text += f"<b>🏗️ Arch:</b> <code>{platform.machine()}</code>\n"
