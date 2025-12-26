@@ -1,16 +1,16 @@
 import asyncio
 import logging
-from userbot.database.core import CybroDB
+from userbot.database.core import LegendDB
 from userbot.helpers import config
 
 # Singleton Database Instance
-liter = CybroDB(config.DB_NAME)
+liter = LegendDB(config.DB_NAME)
 
 class AsyncDatabaseWrapper:
     """
-    Wraps CybroDB to provide the legacy get/set/remove interface asynchronous.
+    Wraps LegendDB to provide the legacy get/set/remove interface asynchronous.
     """
-    def __init__(self, db_instance: CybroDB):
+    def __init__(self, db_instance: LegendDB):
         self.db = db_instance
 
     async def get(self, section: str, key: str, default=None):

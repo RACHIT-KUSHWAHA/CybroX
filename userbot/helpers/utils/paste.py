@@ -3,7 +3,7 @@ import json
 
 import requests
 
-from helpers.config import Config
+from userbot.helpers.config import Config
 from ...core.logger import logging
 
 LOGS = logging.getLogger("Cybrox.Userbot.paste")

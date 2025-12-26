@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.enums import ChatMemberStatus, ChatType
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 from userbot.helpers.db import liter
 
 @Client.on_message(filters.command("fban", prefix) & filters.me)

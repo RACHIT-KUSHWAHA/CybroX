@@ -2,7 +2,7 @@ from pyrogram import Client
 import asyncio
 
 async def main():
-    print("--- CybroX Session Generator ---")
+    print("--- Legendbot Session Generator ---")
     print("Go to https://my.telegram.org to get API ID and API HASH.")
     
     try:

@@ -13,5 +13,5 @@ if [ -z "$STRINGSESSION" ] && [ -z "$SESSION_STRING" ]; then
     exit 1
 fi
 
-echo "Starting CybroX Userbot (Lite Plan)..."
+echo "Starting Legendbot Userbot (Lite Plan)..."
 python3 -m userbot

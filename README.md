@@ -1,14 +1,14 @@
 
 <p align="center">
-    <a href="https://github.com/RACHIT-KUSHWAHA/CybroX/stargazers"><img src="https://img.shields.io/github/stars/RACHIT-KUSHWAHA/CybroX?color=yellow&logo=github&style=for-the-badge" alt="Stars" /></a>
-    <a href="https://github.com/RACHIT-KUSHWAHA/CybroX/network/members"><img src="https://img.shields.io/github/forks/RACHIT-KUSHWAHA/CybroX?color=red&logo=github&style=for-the-badge" alt="Forks" /></a> 
+    <a href="https://github.com/RACHIT-KUSHWAHA/Legendbot/stargazers"><img src="https://img.shields.io/github/stars/RACHIT-KUSHWAHA/Legendbot?color=yellow&logo=github&style=for-the-badge" alt="Stars" /></a>
+    <a href="https://github.com/RACHIT-KUSHWAHA/Legendbot/network/members"><img src="https://img.shields.io/github/forks/RACHIT-KUSHWAHA/Legendbot?color=red&logo=github&style=for-the-badge" alt="Forks" /></a> 
     <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&style=for-the-badge" alt="Python" /></a>
     <a href="https://docs.pyrogram.org"><img src="https://img.shields.io/badge/Pyrogram-v2-orange?logo=telegram&style=for-the-badge" alt="Pyrogram" /></a>
 </p>
 
 <p align="center">
   <b>Advanced. Lightweight. Zero-Cost.</b><br>
-  CybroX is a next-generation Telegram Userbot optimized for speed, AI capabilities, and free hosting platforms.
+  Legendbot is a next-generation Telegram Userbot optimized for speed, AI capabilities, and free hosting platforms.
 </p>
 
 <hr>
@@ -34,10 +34,10 @@
     <a href="https://heroku.com/deploy">
         <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" width="200" />
     </a>
-    <a href="https://render.com/deploy?repo=https://github.com/RACHIT-KUSHWAHA/CybroX">
+    <a href="https://render.com/deploy?repo=https://github.com/RACHIT-KUSHWAHA/Legendbot">
         <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" width="200" />
     </a>
-    <a href="https://app.koyeb.com/deploy?type=git&repository=RACHIT-KUSHWAHA/CybroX&branch=main&name=cybrox">
+    <a href="https://app.koyeb.com/deploy?type=git&repository=RACHIT-KUSHWAHA/Legendbot&branch=main&name=legendbot">
         <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy to Koyeb" width="200" />
     </a>
 </p>
@@ -48,8 +48,8 @@ Easy setup for developers and local testing.
 
 ```bash
 # 1. Clone Repository
-git clone https://github.com/RACHIT-KUSHWAHA/CybroX.git
-cd CybroX
+git clone https://github.com/RACHIT-KUSHWAHA/Legendbot.git
+cd Legendbot
 
 # 2. Install Dependencies
 pip install -r requirements.txt

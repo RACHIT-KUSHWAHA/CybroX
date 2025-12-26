@@ -1,1 +1,1 @@
-# CybroX Userbot Package
+# Legendbot Userbot Package

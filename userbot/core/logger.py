@@ -6,4 +6,4 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-LOGS = logging.getLogger("cybrox")
+LOGS = logging.getLogger("legendbot")

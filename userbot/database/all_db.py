@@ -2,7 +2,7 @@ import ast
 import os
 import sys
 
-from helpers.config import (
+from userbot.helpers.config import (
     DATABASE_URL,
     MONGO_URI,
     REDIS_PASSWORD,

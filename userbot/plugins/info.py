@@ -1,5 +1,5 @@
-#  CybroX-UserBot - telegram userbot
-#  Copyright (C) 2025 CybroX UserBot Organization
+#  Legendbot-UserBot - telegram userbot
+#  Copyright (C) 2025 Legendbot UserBot Organization
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -26,13 +26,13 @@ from userbot.helpers.misc import modules_help, prefix, python_version, userbot_v
 @Client.on_message(filters.command(["about", "info"], prefix) & filters.me)
 async def about(client: Client, message: Message):
     await message.edit(
-        f"<b>CybroX-UserBot</b>\n\n"
+        f"<b>Legendbot-UserBot</b>\n\n"
         f"<b>• Version:</b> <code>{userbot_version}</code>\n"
         f"<b>• Python:</b> <code>{python_version}</code>\n"
         f"<b>• Pyrogram:</b> <code>{'.'.join(str(x) for x in client.pyrogram_version)}</code>\n"
         f"<b>• Platform:</b> <code>{sys.platform}</code>\n"
         f"<b>• System:</b> <code>{platform.version()}</code>\n\n"
-        f"<b>• Repository:</b> <a href='https://github.com/YourUsername/CybroX-UserBot'>GitHub</a>\n"
+        f"<b>• Repository:</b> <a href='https://github.com/YourUsername/Legendbot-UserBot'>GitHub</a>\n"
         f"<b>• Channel:</b> <a href='https://t.me/YourChannel'>Telegram</a>"
     )
 
@@ -53,7 +53,7 @@ async def help_command(client: Client, message: Message):
             await message.edit(f"<b>Module {module_name} not found!</b>")
     else:
         await message.edit(
-            f"<b>CybroX UserBot Help</b>\n\n"
+            f"<b>Legendbot UserBot Help</b>\n\n"
             f"<b>Available Modules:</b>\n"
             + "\n".join(f"• <code>{module}</code>" for module in sorted(modules_help.keys()))
             + f"\n\nUse <code>{prefix}help [module]</code> to get help for a specific module."

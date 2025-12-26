@@ -1,5 +1,5 @@
-#  CybroX-UserBot - telegram userbot
-#  Copyright (C) 2025 CybroX UserBot Organization
+#  Legendbot-UserBot - telegram userbot
+#  Copyright (C) 2025 Legendbot UserBot Organization
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@ from pyrogram.types import Message
 
 from userbot.core.logger import LOGS
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 
 
 @Client.on_message(filters.command("type", prefix) & filters.me)

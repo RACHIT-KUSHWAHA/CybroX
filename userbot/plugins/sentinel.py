@@ -1,6 +1,6 @@
 # Module: sentinel.py
 # Description: Sentinel (Malware Scanner & File Sanitizer)
-# Copyright (C) 2025 CybroX UserBot Organization
+# Copyright (C) 2025 Legendbot UserBot Organization
 
 import os
 import hashlib
@@ -10,7 +10,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 
 # You should add VT_API_KEY to your .env file
 VT_API_KEY = os.getenv("VT_API_KEY", None)

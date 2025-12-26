@@ -16,7 +16,7 @@ from userbot.core.session import app
 async def start_web_server():
     """Starts a tiny aiohttp web server for keep-alive."""
     async def handle(request):
-        return web.Response(text="CybroX is Alive")
+        return web.Response(text="Legendbot is Alive")
 
     server = web.Application()
     server.router.add_get("/", handle)
@@ -50,7 +50,7 @@ async def main():
     # Or simply await the server start.
     await start_web_server()
 
-    LOGS.info("CybroX Userbot Started Successfully")
+    LOGS.info("Legendbot Userbot Started Successfully")
 
     # 4. Idle (Block main loop)
     await idle()

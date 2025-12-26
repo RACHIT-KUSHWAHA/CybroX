@@ -1,5 +1,5 @@
-#  CybroX-UserBot - telegram userbot
-#  Copyright (C) 2025 CybroX UserBot Organization
+#  Legendbot-UserBot - telegram userbot
+#  Copyright (C) 2025 Legendbot UserBot Organization
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@ from pyrogram.types import Message
 # import git
 
 from userbot.helpers.misc import modules_help, prefix, userbot_version
-from userbot.helpers.scripts import edit_or_reply, restart
+from userbot.helpers.managers import edit_or_reply, restart
 from userbot.helpers.db import db
 
 
@@ -41,7 +41,7 @@ async def restart_cmd(client: Client, message: Message):
 
 @Client.on_message(filters.command("update", prefix) & filters.me)
 async def update_cmd(client: Client, message: Message):
-    await edit_or_reply(message, "<b>❌ Update is disabled in CybroX-Lite.</b>")
+    await edit_or_reply(message, "<b>❌ Update is disabled in Legendbot-Lite.</b>")
 
 
 @Client.on_message(filters.command(["sysinfo", "neofetch"], prefix) & filters.me)
@@ -63,7 +63,7 @@ async def sysinfo_cmd(client: Client, message: Message):
     
     info_text = f"""<b>System Information</b>
 
-<b>CybroX-UserBot:</b> <code>v{userbot_version}</code>
+<b>Legendbot-UserBot:</b> <code>v{userbot_version}</code>
 <b>Python:</b> <code>{platform.python_version()}</code>
 <b>OS:</b> <code>{platform.system()} {platform.release()}</code>
 

@@ -1,6 +1,6 @@
 # Module: forensics.py
 # Description: Forensic Mirror (Edit Logger)
-# Copyright (C) 2025 CybroX UserBot Organization
+# Copyright (C) 2025 Legendbot UserBot Organization
 
 import asyncio
 from pyrogram import Client, filters
@@ -8,7 +8,7 @@ from pyrogram.types import Message
 
 from userbot.core.logger import LOGS
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 from userbot.helpers.db import db
 
 # Configuration: We can toggle logging on/off

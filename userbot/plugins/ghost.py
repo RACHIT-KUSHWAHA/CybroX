@@ -2,7 +2,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 
 # Global state for Ghost Mode
 GHOST_MODE = False

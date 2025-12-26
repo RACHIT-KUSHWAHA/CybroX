@@ -9,7 +9,7 @@ import g4f
 from userbot.core.logger import LOGS
 from userbot.helpers import config
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 
 # Configure g4f
 g4f.debug.logging = False

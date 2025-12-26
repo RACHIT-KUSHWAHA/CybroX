@@ -1,5 +1,5 @@
-#  CybroX-UserBot - telegram userbot
-#  Copyright (C) 2025 CybroX UserBot Organization
+#  Legendbot-UserBot - telegram userbot
+#  Copyright (C) 2025 Legendbot UserBot Organization
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ from pyrogram.raw.functions.messages import GetStickerSet
 from pyrogram.raw.types import InputStickerSetShortName
 
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply, with_reply
+from userbot.helpers.managers import edit_or_reply, with_reply
 from userbot.helpers.db import db
 
 
@@ -81,7 +81,7 @@ async def kang_cmd(client: Client, message: Message):
     
     # Get sticker pack details from user's settings or defaults
     user = await client.get_me()
-    pack_prefix = await db.get("stickers", "pack_prefix", "CybroX_")
+    pack_prefix = await db.get("stickers", "pack_prefix", "Legendbot_")
     max_stickers = 120
     
     # Determine Media Type

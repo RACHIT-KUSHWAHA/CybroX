@@ -1,23 +1,34 @@
-#  CybroX-UserBot - telegram userbot
-#  Copyright (C) 2025 CybroX UserBot Organization
-#
-#  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation, either version 3 of the License, or
-#  (at your option) any later version.
+#  Legendbot - Advanced Telegram Automation
+#  Copyright (C) 2025 Legendbot Organization
 
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
-
+from userbot.helpers.managers import edit_or_reply
 
 @Client.on_message(filters.command(["help", "h"], prefix) & filters.me)
 async def help_cmd(client: Client, message: Message):
+    # 1. Inline Help Menu (The "Advanced Look")
     if len(message.command) == 1:
-        # Group modules by category
+        if hasattr(client, "assistant") and client.assistant:
+            try:
+                results = await client.get_inline_bot_results(query="help")
+                if results and results.results:
+                    await client.send_inline_bot_result(
+                        message.chat.id,
+                        results.query_id,
+                        results.results[0].id,
+                        reply_to_message_id=message.reply_to_message_id
+                    )
+                    await message.delete()
+                    return
+            except Exception:
+                pass
+
+        # Text Fallback
+        text = f"<b>Legendbot Help</b>\n\n"
         categories = {}
         for module_name, commands in sorted(modules_help.items()):
             category = getattr(commands, "__category__", "misc")
@@ -25,9 +36,6 @@ async def help_cmd(client: Client, message: Message):
                 categories[category] = []
             categories[category].append(module_name)
         
-        text = f"<b>CybroX-UserBot Help</b>\n\n"
-        
-        # Display modules by category
         for category, module_names in sorted(categories.items()):
             text += f"<b>📂 {category.title()}</b>\n"
             for module_name in sorted(module_names):
@@ -35,15 +43,16 @@ async def help_cmd(client: Client, message: Message):
             text += "\n"
         
         text += f"<b>Total modules:</b> {len(modules_help)}"
-        
         await edit_or_reply(message, text)
+
+    # 2. Specific Module Help
     elif message.command[1].lower() in modules_help:
         module_name = message.command[1].lower()
         commands = modules_help[module_name]
         
         text = f"<b>Help for {module_name} module</b>\n\n"
         for command, description in commands.items():
-            if command != "__category__":  # Skip category indicator
+            if command != "__category__":
                 text += f"<code>{prefix}{command}</code>: {description}\n"
         
         await edit_or_reply(message, text)

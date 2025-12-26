@@ -1,6 +1,6 @@
 # Module: zombies.py
 # Description: Clean deleted accounts from groups
-# Copyright (C) 2025 CybroX UserBot Organization
+# Copyright (C) 2025 Legendbot UserBot Organization
 
 import asyncio
 from pyrogram import Client, filters, errors
@@ -8,7 +8,7 @@ from pyrogram.types import Message
 from pyrogram.enums import ChatMemberStatus
 
 from userbot.helpers.misc import modules_help, prefix
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 
 @Client.on_message(filters.command(["zombies", "cleancheck"], prefix) & filters.me)
 async def zombies_cmd(client: Client, message: Message):

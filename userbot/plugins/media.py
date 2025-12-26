@@ -3,7 +3,7 @@ import asyncio
 import time
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from userbot.helpers.scripts import edit_or_reply
+from userbot.helpers.managers import edit_or_reply
 from userbot.helpers.misc import prefix
 
 # ---------------------------------------------------------------------------------
@@ -89,8 +89,8 @@ async def song_cmd(client: Client, message: Message):
             chat_id=message.chat.id,
             audio=path,
             title=title.replace(f"{int(time.time())}_", "").replace(".mp3", ""),
-            performer="CybroX",
-            caption=f"🎵 <b>{title}</b>\nDownloaded by CybroX"
+            performer="Legendbot",
+            caption=f"🎵 <b>{title}</b>\nDownloaded by Legendbot"
         )
         await msg.delete()
     except Exception as e:
@@ -131,7 +131,7 @@ async def video_cmd(client: Client, message: Message):
         await client.send_video(
             chat_id=message.chat.id,
             video=path,
-            caption=f"🎬 <b>{title}</b>\nDownloaded by CybroX"
+            caption=f"🎬 <b>{title}</b>\nDownloaded by Legendbot"
         )
         await msg.delete()
     except Exception as e:
