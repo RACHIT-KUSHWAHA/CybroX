@@ -1,6 +1,12 @@
 import logging
 import asyncio
 import sys
+
+# Force UTF-8 for Windows Console
+if sys.platform.startswith("win"):
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+
 from pyrogram import idle
 from userbot.core.session import app
 from userbot.helpers import config
@@ -34,4 +40,5 @@ async def main():
     loop_task.cancel()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())

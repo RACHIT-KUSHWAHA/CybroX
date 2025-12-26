@@ -1,5 +1,6 @@
 import random
 import os
+import time
 import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from pyrogram import Client, filters
@@ -37,7 +38,7 @@ async def meme_cmd(client: Client, message: Message):
         top_text, bottom_text = text.split(";", 1)
     else:
         top_text, bottom_text = text, ""
-
+# chup be
     try:
         # Download image
         photo_path = await client.download_media(replied)

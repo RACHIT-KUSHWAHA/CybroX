@@ -1,0 +1,2 @@
+from pyrogram.types import ChatAdministratorRights
+print(ChatAdministratorRights.__annotations__)

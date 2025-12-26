@@ -23,7 +23,7 @@ share/python-wheels/
 MANIFEST
 
 # Environment Variables
-.env
+# .env
 .venv
 env/
 venv/
@@ -45,4 +45,4 @@ venv.bak
 .idea/
 
 # Logs
-*.log
+# *.log

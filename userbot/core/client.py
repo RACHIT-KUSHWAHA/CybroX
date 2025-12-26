@@ -74,7 +74,14 @@ class Legendbot(Client):
         await super().start()
         
         me = await self.get_me()
-        LOG.info(f"Legendbot: Started as {me.first_name} (ID: {me.id})")
+        LOG.info(f"Legendbot: Started as {me.first_name.encode('utf-8', 'ignore').decode('utf-8')} (ID: {me.id})")
+        
+        # Ensure Userbot has interacted with Assistant (Fixes Inline Query PeerIdInvalid)
+        if self.assistant_username:
+            try:
+                await self.send_message(self.assistant_username, "/start")
+            except Exception as e:
+                LOG.warning(f"Failed to interaction-check assistant: {e}")
         
         # Post-Start hook: Update restart status if needed
         # (This logic is usually in main.py, but can be here too)
@@ -94,16 +101,6 @@ class Legendbot(Client):
         Currently relying on super().__init__(plugins=...) but this is here for future expansion.
         """
         pass
-    
-    # helper for inline queries ("Help Button" requirement)
-    async def get_inline_bot_results(self, query=""):
-        """
-        Fetch results from the assistant bot.
-        Wrapper for client.get_inline_bot_results(self.assistant_username, query)
-        """
-        if not self.assistant_username:
-            return None
-        return await super().get_inline_bot_results(self.assistant_username, query)
 
     # Re-exporting helpers as methods
     # from userbot.helpers.managers import edit_or_reply 

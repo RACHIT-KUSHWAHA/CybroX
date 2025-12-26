@@ -17,13 +17,14 @@ import humanize
 from userbot.helpers.misc import modules_help, prefix
 from userbot.core.managers import edit_or_reply
 from userbot.database.afk_db import afk_data, set_afk_data
+from userbot.database.core import db as core_db
 
 
 @Client.on_message(filters.command("afk", prefix) & filters.me)
 async def afk_cmd(client: Client, message: Message):
     """Set your status as AFK (Away From Keyboard)"""
     # Get reason if provided
-    db = afk_data()
+    afk_state = afk_data()
     if len(message.command) > 1:
         reason = message.text.split(None, 1)[1]
     else:
@@ -39,12 +40,12 @@ async def afk_cmd(client: Client, message: Message):
 
     # Update user's first name to indicate AFK status
     # Only if setting is enabled
-    if await db.get("afk", "rename_profile", True):
+    if await core_db.get("afk", "rename_profile", True):
         me = await client.get_me()
         try:
             if not me.first_name.startswith("[AFK] "):
                 # Save original name to restore later
-                await db.set("afk", "original_first_name", me.first_name)
+                await core_db.set("afk", "original_first_name", me.first_name)
                 await client.update_profile(first_name=f"[AFK] {me.first_name}")
         except Exception as e:
             # Don't let renaming issues stop AFK functionality
@@ -60,20 +61,20 @@ async def afk_cmd(client: Client, message: Message):
 @Client.on_message(filters.incoming & ~filters.bot & filters.private, group=10)
 async def afk_private_handler(client: Client, message: Message):
     """Handle incoming private messages when AFK"""
-    db = afk_data()
-    if not db.get("afk_status", False):
+    afk_state = afk_data()
+    if not afk_state.get("afk_status", False):
         return
     
     # Get AFK info
-    afk_time = db.get("afk_time", 0)
-    afk_reason = db.get("afk_reason", "No reason specified")
+    afk_time = afk_state.get("afk_time", 0)
+    afk_reason = afk_state.get("afk_reason", "No reason specified")
 
     # Calculate time difference
     time_diff = time.time() - afk_time
     time_humanized = humanize.naturaltime(datetime.timedelta(seconds=int(time_diff)))
     
     # Store message for later viewing
-    mentions = db.get("afk_mentions", [])
+    mentions = afk_state.get("afk_mentions", [])
     mentions.append({
         "user_id": message.from_user.id,
         "username": message.from_user.username,
@@ -88,7 +89,10 @@ async def afk_private_handler(client: Client, message: Message):
     if len(mentions) > 50:
         mentions = mentions[-50:]
     
-    await db.set("afk", "afk_mentions", mentions)
+    # Update mentions in DB
+    # We need to update the whole dict because set_afk_data overwrites
+    afk_state["afk_mentions"] = mentions
+    set_afk_data(afk_state)
     
     # Reply to the message
     try:
@@ -106,8 +110,8 @@ async def afk_private_handler(client: Client, message: Message):
 @Client.on_message(filters.incoming & ~filters.bot & filters.group, group=10)
 async def afk_group_handler(client: Client, message: Message):
     """Handle mentions in groups when AFK"""
-    db = afk_data()
-    if not db.get("afk_status", False):
+    afk_state = afk_data()
+    if not afk_state.get("afk_status", False):
         return
     
     # Only process if user is mentioned or message is a reply to the user
@@ -117,15 +121,15 @@ async def afk_group_handler(client: Client, message: Message):
         return
     
     # Get AFK info
-    afk_time = db.get("afk_time", 0)
-    afk_reason = db.get("afk_reason", "No reason specified")
+    afk_time = afk_state.get("afk_time", 0)
+    afk_reason = afk_state.get("afk_reason", "No reason specified")
 
     # Calculate time difference
     time_diff = time.time() - afk_time
     time_humanized = humanize.naturaltime(datetime.timedelta(seconds=int(time_diff)))
     
     # Store mention for later viewing
-    mentions = db.get("afk_mentions", [])
+    mentions = afk_state.get("afk_mentions", [])
     mentions.append({
         "user_id": message.from_user.id,
         "username": message.from_user.username,
@@ -141,7 +145,9 @@ async def afk_group_handler(client: Client, message: Message):
     if len(mentions) > 50:
         mentions = mentions[-50:]
     
-    await db.set("afk", "afk_mentions", mentions)
+    # Update mentions in DB
+    afk_state["afk_mentions"] = mentions
+    set_afk_data(afk_state)
     
     # Reply to the message
     try:
@@ -158,7 +164,7 @@ async def afk_group_handler(client: Client, message: Message):
 @Client.on_message(filters.me, group=11)
 async def unafk_handler(client: Client, message: Message):
     """Handle the user's return from AFK status"""
-    db = afk_data()
+    afk_state = afk_data()
     # Skip commands
     if message.text and message.text.startswith(prefix):
         return
@@ -167,29 +173,30 @@ async def unafk_handler(client: Client, message: Message):
     if message.text and message.text.split()[0] == f"{prefix}afk":
         return
 
-    if db.get("afk_status", False):
+    if afk_state.get("afk_status", False):
         # Calculate AFK time
-        afk_time = await db.get("afk", "afk_time", 0)
+        afk_time = afk_state.get("afk_time", 0)
         time_diff = time.time() - afk_time
         time_humanized = humanize.naturaldelta(datetime.timedelta(seconds=int(time_diff)))
         
         # Restore original name if changed
-        if await db.get("afk", "rename_profile", True):
+        if await core_db.get("afk", "rename_profile", True):
             try:
                 me = await client.get_me()
                 if me.first_name.startswith("[AFK] "):
-                    original_name = await db.get("afk", "original_first_name", me.first_name[6:])
+                    original_name = await core_db.get("afk", "original_first_name", me.first_name[6:])
                     await client.update_profile(first_name=original_name)
             except Exception:
                 # Don't let renaming issues stop AFK functionality
                 pass
         
         # Get mention count
-        mentions = await db.get("afk", "afk_mentions", [])
+        mentions = afk_state.get("afk_mentions", [])
         mention_count = len(mentions)
         
         # Reset AFK status
-        await db.set("afk", "afk_status", False)
+        afk_state["afk_status"] = False
+        set_afk_data(afk_state)
         
         # Notify about return
         try:

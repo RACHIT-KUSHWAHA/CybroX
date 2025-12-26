@@ -8,13 +8,25 @@ from pyrogram.types import Message
 from userbot.helpers.misc import modules_help, prefix
 from userbot.helpers.managers import edit_or_reply
 
+# Emoji mapping for categories
+CAT_EMOJIS = {
+    "admin": "👮",
+    "bot": "🤖",
+    "fun": "🎲",
+    "misc": "🧩",
+    "tools": "🛠️",
+    "utils": "🧰",
+    "extra": "🔮",
+    "core": "⚙️"
+}
+
 @Client.on_message(filters.command(["help", "h"], prefix) & filters.me)
 async def help_cmd(client: Client, message: Message):
     # 1. Inline Help Menu (The "Advanced Look")
     if len(message.command) == 1:
         if hasattr(client, "assistant") and client.assistant:
             try:
-                results = await client.get_inline_bot_results(query="help")
+                results = await client.get_inline_bot_results(client.assistant_username, "help")
                 if results and results.results:
                     await client.send_inline_bot_result(
                         message.chat.id,
@@ -24,25 +36,28 @@ async def help_cmd(client: Client, message: Message):
                     )
                     await message.delete()
                     return
-            except Exception:
+            except Exception as e:
+                if "BOT_INLINE_DISABLED" in str(e):
+                    # LOG.warning("Inline mode is disabled for the assistant bot. Please enable it in BotFather.")
+                    pass
                 pass
 
         # Text Fallback
-        text = f"<b>Legendbot Help</b>\n\n"
+        text = f"<b>⚡ 𝗟𝗲𝗴𝗲𝗻𝗱𝗕𝗼𝘁 𝗛𝗲𝗹𝗽 𝗠𝗲𝗻𝘂 ⚡</b>\n\n"
         categories = {}
         for module_name, commands in sorted(modules_help.items()):
-            category = getattr(commands, "__category__", "misc")
+            category = commands.get("__category__", "misc").lower()
             if category not in categories:
                 categories[category] = []
             categories[category].append(module_name)
         
         for category, module_names in sorted(categories.items()):
-            text += f"<b>📂 {category.title()}</b>\n"
-            for module_name in sorted(module_names):
-                text += f"  <code>{prefix}help {module_name}</code>\n"
-            text += "\n"
+            emoji = CAT_EMOJIS.get(category, "📂")
+            text += f"<b>{emoji} {category.title()}</b>\n"
+            text += f"<code>" + "</code>, <code>".join(sorted(module_names)) + "</code>\n\n"
         
-        text += f"<b>Total modules:</b> {len(modules_help)}"
+        text += f"<b>Total modules:</b> {len(modules_help)}\n"
+        text += f"<i>Type <code>{prefix}help [module_name]</code> for more info.</i>"
         await edit_or_reply(message, text)
 
     # 2. Specific Module Help
@@ -50,14 +65,14 @@ async def help_cmd(client: Client, message: Message):
         module_name = message.command[1].lower()
         commands = modules_help[module_name]
         
-        text = f"<b>Help for {module_name} module</b>\n\n"
+        text = f"<b>🛠️ Module: {module_name.title()}</b>\n\n"
         for command, description in commands.items():
             if command != "__category__":
-                text += f"<code>{prefix}{command}</code>: {description}\n"
+                text += f"• <code>{prefix}{command}</code>\n  └ <i>{description}</i>\n\n"
         
         await edit_or_reply(message, text)
     else:
-        await edit_or_reply(message, f"<b>Module {message.command[1]} not found!</b>")
+        await edit_or_reply(message, f"<b>❌ Module <code>{message.command[1]}</code> not found!</b>")
         await asyncio.sleep(3)
         await message.delete()
 

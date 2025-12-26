@@ -1,68 +1,156 @@
-#  Legendbot-UserBot - telegram userbot
-#  Copyright (C) 2025 Legendbot UserBot Organization
-#
-#  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation, either version 3 of the License, or
-#  (at your option) any later version.
+#  Legendbot - Advanced Telegram Automation
+#  Copyright (C) 2025 Legendbot Organization
 
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
+#chup
 
-#  You should have received a copy of the GNU General Public License
-#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-import datetime
-import platform
+import os
 import sys
-from pyrogram import Client, filters
-from pyrogram.types import Message
+import time
+import platform
+import datetime
+from pyrogram import Client, filters, enums
+from pyrogram.types import Message, User
 
 from userbot.helpers.misc import modules_help, prefix, python_version, userbot_version
+from userbot.helpers.managers import edit_or_reply
 
+# --- Helpers ---
 
-@Client.on_message(filters.command(["about", "info"], prefix) & filters.me)
-async def about(client: Client, message: Message):
-    await message.edit(
-        f"<b>Legendbot-UserBot</b>\n\n"
-        f"<b>• Version:</b> <code>{userbot_version}</code>\n"
-        f"<b>• Python:</b> <code>{python_version}</code>\n"
-        f"<b>• Pyrogram:</b> <code>{'.'.join(str(x) for x in client.pyrogram_version)}</code>\n"
-        f"<b>• Platform:</b> <code>{sys.platform}</code>\n"
-        f"<b>• System:</b> <code>{platform.version()}</code>\n\n"
-        f"<b>• Repository:</b> <a href='https://github.com/YourUsername/Legendbot-UserBot'>GitHub</a>\n"
-        f"<b>• Channel:</b> <a href='https://t.me/YourChannel'>Telegram</a>"
-    )
-
-
-@Client.on_message(filters.command("help", prefix) & filters.me)
-async def help_command(client: Client, message: Message):
+async def get_user_info(client: Client, message: Message):
+    """Get user object from message"""
+    user = None
     if len(message.command) > 1:
-        module_name = message.command[1].lower()
-        if module_name in modules_help:
-            await message.edit(
-                f"<b>Help for {module_name} module:</b>\n\n"
-                + "\n".join(
-                    f"<code>{prefix}{command}</code>: {description}"
-                    for command, description in modules_help[module_name].items()
-                )
-            )
-        else:
-            await message.edit(f"<b>Module {module_name} not found!</b>")
-    else:
-        await message.edit(
-            f"<b>Legendbot UserBot Help</b>\n\n"
-            f"<b>Available Modules:</b>\n"
-            + "\n".join(f"• <code>{module}</code>" for module in sorted(modules_help.keys()))
-            + f"\n\nUse <code>{prefix}help [module]</code> to get help for a specific module."
-        )
+        try:
+            user = await client.get_users(message.command[1])
+        except Exception:
+            pass
+    
+    if not user and message.reply_to_message:
+        user = message.reply_to_message.from_user
+        
+    if not user:
+        user = message.from_user
+        
+    return user
 
+def get_status_string(user: User):
+    """Get user status string"""
+    if not user.status:
+        return "None"
+    
+    status = user.status
+    if status == enums.UserStatus.ONLINE:
+        return "Online 🟢"
+    elif status == enums.UserStatus.OFFLINE:
+        if user.last_online_date:
+            return f"Offline (Last seen: {user.last_online_date.strftime('%Y-%m-%d %H:%M:%S')}) 🔴"
+        return "Offline 🔴"
+    elif status == enums.UserStatus.RECENTLY:
+        return "Recently 🟡"
+    elif status == enums.UserStatus.LAST_WEEK:
+        return "Last Week 🟡"
+    elif status == enums.UserStatus.LAST_MONTH:
+        return "Last Month 🟡"
+    elif status == enums.UserStatus.LONG_AGO:
+        return "Long Ago ⚪"
+    return str(status)
+
+# --- Commands ---
+
+@Client.on_message(filters.command(["whois", "info", "user"], prefix) & filters.me)
+async def whois_cmd(client: Client, message: Message):
+    """Get detailed info about a user."""
+    msg = await edit_or_reply(message, "<b>🔍 Fetching user info...</b>")
+    
+    user = await get_user_info(client, message)
+    if not user:
+        return await msg.edit("<b>❌ User not found!</b>")
+    
+    # Fetch full user details (for bio, etc.)
+    try:
+        full_user = await client.get_chat(user.id)
+        bio = full_user.bio if full_user.bio else "None"
+    except Exception:
+        bio = "None"
+        
+    # Common Chats
+    common_chats = 0
+    try:
+        common = await client.get_common_chats(user.id)
+        common_chats = len(common)
+    except Exception:
+        pass
+        
+    # Profile Photo
+    photo_id = user.photo.big_file_id if user.photo else None
+    photo_path = None
+    if photo_id:
+        try:
+            photo_path = await client.download_media(photo_id)
+        except Exception:
+            pass
+
+    # Info Text
+    text = f"<b>👤 User Info:</b>\n\n"
+    text += f"<b>🆔 ID:</b> <code>{user.id}</code>\n"
+    text += f"<b>👤 First Name:</b> {user.first_name}\n"
+    if user.last_name:
+        text += f"<b>👤 Last Name:</b> {user.last_name}\n"
+    if user.username:
+        text += f"<b>📧 Username:</b> @{user.username}\n"
+    text += f"<b>🔗 Permalink:</b> <a href='tg://user?id={user.id}'>Link</a>\n"
+    text += f"<b>🏢 DC ID:</b> {user.dc_id if user.dc_id else 'Unknown'}\n"
+    text += f"<b>🔋 Status:</b> {get_status_string(user)}\n"
+    text += f"<b>📝 Bio:</b> {bio}\n"
+    text += f"<b>🤝 Common Chats:</b> {common_chats}\n"
+    text += f"<b>🤖 Is Bot:</b> {'Yes' if user.is_bot else 'No'}\n"
+    text += f"<b>🚫 Is Scam:</b> {'Yes' if user.is_scam else 'No'}\n"
+    text += f"<b>📛 Is Fake:</b> {'Yes' if user.is_fake else 'No'}\n"
+    if user.is_premium:
+        text += f"<b>🌟 Premium:</b> Yes\n"
+
+    if photo_path:
+        await message.reply_photo(photo_path, caption=text)
+        await msg.delete()
+        os.remove(photo_path)
+    else:
+        await msg.edit(text)
+
+@Client.on_message(filters.command(["id"], prefix) & filters.me)
+async def id_cmd(client: Client, message: Message):
+    """Get ID of current chat or replied user."""
+    text = f"<b>Chat ID:</b> <code>{message.chat.id}</code>\n"
+    
+    if message.reply_to_message:
+        text += f"<b>Replied User ID:</b> <code>{message.reply_to_message.from_user.id}</code>\n"
+        if message.reply_to_message.forward_from:
+            text += f"<b>Forwarded User ID:</b> <code>{message.reply_to_message.forward_from.id}</code>\n"
+        if message.reply_to_message.forward_from_chat:
+            text += f"<b>Forwarded Chat ID:</b> <code>{message.reply_to_message.forward_from_chat.id}</code>\n"
+            
+    await edit_or_reply(message, text)
+
+@Client.on_message(filters.command(["sysinfo", "about", "bot"], prefix) & filters.me)
+async def sysinfo_cmd(client: Client, message: Message):
+    """Show system and bot information."""
+    msg = await edit_or_reply(message, "<b>🖥️ Fetching system info...</b>")
+    
+    # Uptime
+    uptime = datetime.timedelta(seconds=int(time.time() - client.start_time)) if hasattr(client, 'start_time') else "Unknown"
+    
+    text = f"<b>🤖 Legendbot System Info</b>\n\n"
+    text += f"<b>🐍 Python:</b> <code>{python_version}</code>\n"
+    text += f"<b>🔥 Pyrogram:</b> <code>{'.'.join(str(x) for x in client.pyrogram_version)}</code>\n"
+    text += f"<b>📦 Version:</b> <code>{userbot_version}</code>\n"
+    text += f"<b>💻 OS:</b> <code>{platform.system()} {platform.release()}</code>\n"
+    text += f"<b>🏗️ Arch:</b> <code>{platform.machine()}</code>\n"
+    text += f"<b>⏳ Uptime:</b> <code>{uptime}</code>\n"
+    
+    await msg.edit(text)
 
 modules_help["info"] = {
-    "about": "Show information about userbot",
-    "info": "Show information about userbot",
-    "help": "Show this help message",
-    "help [module]": "Show help for a specific module",
+    "whois [user/reply]": "Get detailed info about a user.",
+    "id": "Get ID of chat or replied message.",
+    "sysinfo": "Show system and bot information.",
+    "__category__": "info"
 }

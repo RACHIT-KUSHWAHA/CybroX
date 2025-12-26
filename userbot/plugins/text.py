@@ -131,11 +131,52 @@ async def reverse_cmd(client: Client, message: Message):
     await message.edit(reversed_text)
 
 
+@Client.on_message(filters.command("spam", prefix) & filters.me)
+async def spam_cmd(client: Client, message: Message):
+    """Spam a message. Usage: .spam [count] [text]"""
+    if len(message.command) < 3:
+        return await edit_or_reply(message, "<b>❌ Usage: .spam [count] [text]</b>")
+    
+    try:
+        count = int(message.command[1])
+        text = message.text.split(None, 2)[2]
+    except ValueError:
+        return await edit_or_reply(message, "<b>❌ Invalid count!</b>")
+        
+    await message.delete()
+    
+    for _ in range(count):
+        await client.send_message(message.chat.id, text)
+        await asyncio.sleep(0.05)
+
+
+@Client.on_message(filters.command("dspam", prefix) & filters.me)
+async def dspam_cmd(client: Client, message: Message):
+    """Delay spam. Usage: .dspam [count] [delay] [text]"""
+    if len(message.command) < 4:
+        return await edit_or_reply(message, "<b>❌ Usage: .dspam [count] [delay] [text]</b>")
+    
+    try:
+        count = int(message.command[1])
+        delay = float(message.command[2])
+        text = message.text.split(None, 3)[3]
+    except ValueError:
+        return await edit_or_reply(message, "<b>❌ Invalid count or delay!</b>")
+        
+    await message.delete()
+    
+    for _ in range(count):
+        await client.send_message(message.chat.id, text)
+        await asyncio.sleep(delay)
+
+
 modules_help["text"] = {
     "type [text]": "Type text with typing animation effect",
     "mock [text]": "Convert text to mOcK tExT",
     "vapor [text]": "Convert text to vaporwave aesthetic (full-width characters)",
     "zalgo [text]": "Corrupt text with zalgo effect",
     "reverse [text]": "Reverse the given text",
+    "spam [count] [text]": "Spam a message X times",
+    "dspam [count] [delay] [text]": "Spam with delay",
     "__category__": "fun"
 }

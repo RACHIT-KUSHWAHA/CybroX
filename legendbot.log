@@ -1,0 +1,450 @@
+2025-12-26 14:22:24,903 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("kang_cmd") in group 0 from "userbot.plugins.stickers"
+2025-12-26 14:22:24,904 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sticker_info_cmd") in group 0 from "userbot.plugins.stickers"
+2025-12-26 14:22:24,928 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("restart_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 14:22:24,929 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("update_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 14:22:24,929 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sysinfo_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 14:22:24,932 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("type_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:22:24,933 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("mock_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:22:24,933 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("vapor_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:22:24,934 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("zalgo_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:22:24,934 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("reverse_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:22:24,938 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("zombies_cmd") in group 0 from "userbot.plugins.zombies"
+2025-12-26 14:22:24,939 - pyrogram.client - INFO - [legendbot] Successfully loaded 64 plugins from "userbot.plugins"
+2025-12-26 14:22:24,942 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:22:24,971 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:22:24,974 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:22:25,176 - pyrogram.client - INFO - Time synced: 2025-12-26 14:22:21.754193
+2025-12-26 14:22:25,451 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:22:25,452 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:22:25,453 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:22:25,454 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:22:25,455 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:22:26,237 - pyrogram.dispatcher - INFO - Started 16 HandlerTasks
+2025-12-26 14:22:27,501 - root - INFO - Legendbot Started Successfully
+2025-12-26 14:22:27,503 - root - INFO - Persistence: Backup loop started.
+2025-12-26 14:22:29,056 - pyrogram.types.input_content.input_text_message_content - WARNING - `disable_web_page_preview` is deprecated and will be removed in future updates. Use `link_preview_options` instead.
+2025-12-26 14:22:35,015 - pyrogram.dispatcher - ERROR - 'NoneType' object has no attribute 'delete'
+Traceback (most recent call last):
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\dispatcher.py", line 373, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\inline_query.py", line 232, in callback_handler
+    await callback.message.delete()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'delete'
+2025-12-26 14:22:41,052 - pyrogram.types.input_content.input_text_message_content - WARNING - `disable_web_page_preview` is deprecated and will be removed in future updates. Use `link_preview_options` instead.
+2025-12-26 14:22:46,953 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:22:46,957 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 14:22:46,960 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:22:49,005 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:22:49,008 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:22:49,010 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:22:49,010 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:22:49,011 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:22:49,058 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 14:22:49,059 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:22:49,551 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:22:49,552 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:22:49,553 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:22:49,555 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:22:49,555 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:23:33,724 - pyrogram.methods.utilities.idle - INFO - Stop signal received (SIGINT). Exiting...
+2025-12-26 14:23:33,726 - pyrogram.dispatcher - INFO - Stopped 16 HandlerTasks
+2025-12-26 14:23:33,729 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:23:33,731 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:23:33,733 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:23:33,734 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:23:33,736 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:23:33,737 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:23:33,740 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:23:33,741 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:23:33,743 - pyrogram.dispatcher - INFO - Stopped 16 HandlerTasks
+2025-12-26 14:23:33,745 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:23:33,746 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:23:33,747 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:23:33,747 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:23:33,751 - Legendbot - INFO - Legendbot: Offline.
+2025-12-26 14:30:10,272 - root - INFO - Config Loaded. Sudo Users: 0
+2025-12-26 14:30:10,896 - Legendbot - INFO - Legendbot: Initializing Database...
+2025-12-26 14:30:10,898 - LegendDB - INFO - Initializing Legendbot Universal Database...
+2025-12-26 14:30:10,902 - LegendDB - INFO - LocalDB (SQLite) Initialized.
+2025-12-26 14:30:10,902 - LegendDB - WARNING - No MONGO_URI provided. Switching to Local Mode.
+2025-12-26 14:30:10,902 - LegendDB - WARNING - Running in Pure Local Mode (No Cloud, No Cache). Data is stored in 'legendbot.db'.
+2025-12-26 14:30:10,903 - Legendbot - INFO - Legendbot: Starting Assistant Bot...
+2025-12-26 14:30:10,906 - pyrogram.session.auth - INFO - Start creating a new auth key on DC2
+2025-12-26 14:30:10,906 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:10,925 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:14,020 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-12-26 14:30:14,022 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:14,023 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:14,042 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:14,045 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:16,050 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:16,053 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:16,053 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:16,054 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:16,055 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:16,091 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:16,093 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:18,107 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:18,109 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:18,110 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:18,111 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:18,111 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:18,122 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:18,124 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:20,137 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:20,138 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:20,138 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:20,139 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:20,139 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:20,146 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:20,147 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:22,161 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:22,163 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:22,164 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:22,165 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:22,166 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:22,187 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:22,191 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:24,203 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:24,205 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:24,206 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:24,206 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:24,208 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:24,226 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:24,228 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:26,238 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:26,239 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:26,239 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:26,240 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:26,240 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:26,329 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:26,332 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:28,338 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:28,340 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:28,341 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:28,342 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:28,342 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:28,347 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:28,349 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:30,363 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:30,364 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:30,365 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:30,366 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:30,366 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:30,388 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:30,391 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:32,410 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:32,412 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:32,412 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:32,413 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:32,414 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:32,460 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:32,462 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:34,477 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:34,479 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:34,480 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:34,480 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:34,481 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:34,505 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:34,509 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:36,521 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:36,522 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:36,523 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:36,524 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:36,524 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:36,551 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:36,555 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:38,566 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:38,568 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:38,569 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:38,569 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:38,570 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:38,595 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:38,599 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:40,608 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:40,610 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:40,611 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:40,611 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:40,612 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:40,629 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:40,632 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:30:42,650 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:30:42,651 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:30:42,652 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:30:42,653 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:30:42,653 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:30:42,850 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:30:42,854 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:44:24,710 - root - INFO - Config Loaded. Sudo Users: 0
+2025-12-26 14:44:25,650 - Legendbot - INFO - Legendbot: Initializing Database...
+2025-12-26 14:44:25,651 - LegendDB - INFO - Initializing Legendbot Universal Database...
+2025-12-26 14:44:25,654 - LegendDB - INFO - LocalDB (SQLite) Initialized.
+2025-12-26 14:44:25,654 - LegendDB - WARNING - No MONGO_URI provided. Switching to Local Mode.
+2025-12-26 14:44:25,655 - LegendDB - WARNING - Running in Pure Local Mode (No Cloud, No Cache). Data is stored in 'legendbot.db'.
+2025-12-26 14:44:25,655 - Legendbot - INFO - Legendbot: Starting Assistant Bot...
+2025-12-26 14:44:25,656 - pyrogram.session.auth - INFO - Start creating a new auth key on DC2
+2025-12-26 14:44:25,656 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:44:25,671 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:44:29,135 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-12-26 14:44:29,136 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:44:29,136 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:44:29,162 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:44:29,165 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:44:29,557 - pyrogram.client - INFO - Time synced: 2025-12-26 14:44:26.025460
+2025-12-26 14:44:30,792 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:44:30,795 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:44:30,795 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:44:30,796 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:44:30,796 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:44:32,744 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:44:32,746 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:44:32,746 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:44:32,747 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:44:32,747 - pyrogram.session.auth - INFO - Start creating a new auth key on DC5
+2025-12-26 14:44:32,748 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:44:32,760 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:44:34,153 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-12-26 14:44:34,155 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:44:34,156 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:44:34,163 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:44:34,166 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:44:34,920 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:44:34,920 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:44:34,921 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:44:34,921 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:44:34,922 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:44:40,004 - pyrogram.dispatcher - INFO - Started 16 HandlerTasks
+2025-12-26 14:44:40,372 - Legendbot - INFO - Legendbot: Assistant Started as @AndroDznsBot
+2025-12-26 14:44:40,373 - Legendbot - INFO - Legendbot: Connecting to Telegram...
+2025-12-26 14:44:40,394 - root - ERROR - Failed to start Legendbot: cannot import name 'ChatPrivileges' from 'pyrogram.types' (C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\types\__init__.py)
+2025-12-26 14:48:41,256 - root - INFO - Config Loaded. Sudo Users: 0
+2025-12-26 14:48:41,917 - Legendbot - INFO - Legendbot: Initializing Database...
+2025-12-26 14:48:41,918 - LegendDB - INFO - Initializing Legendbot Universal Database...
+2025-12-26 14:48:41,948 - LegendDB - INFO - LocalDB (SQLite) Initialized.
+2025-12-26 14:48:41,948 - LegendDB - WARNING - No MONGO_URI provided. Switching to Local Mode.
+2025-12-26 14:48:41,948 - LegendDB - WARNING - Running in Pure Local Mode (No Cloud, No Cache). Data is stored in 'legendbot.db'.
+2025-12-26 14:48:41,950 - Legendbot - INFO - Legendbot: Starting Assistant Bot...
+2025-12-26 14:48:41,952 - pyrogram.session.auth - INFO - Start creating a new auth key on DC2
+2025-12-26 14:48:41,953 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:48:42,602 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:48:46,348 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-12-26 14:48:46,349 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:48:46,349 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:48:46,357 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:48:46,359 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:48:48,368 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:48:48,370 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:48:48,371 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:48:48,372 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:48:48,373 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:48:48,390 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-12-26 14:48:48,393 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:48:49,275 - pyrogram.client - INFO - Time synced: 2025-12-26 14:48:45.283856
+2025-12-26 14:48:50,812 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:48:50,813 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:48:50,813 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:48:50,814 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:48:50,814 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:48:51,315 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:48:51,316 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:48:51,317 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:48:51,318 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:48:51,319 - pyrogram.session.auth - INFO - Start creating a new auth key on DC5
+2025-12-26 14:48:51,320 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:48:51,326 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:48:52,790 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-12-26 14:48:52,791 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:48:52,792 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:48:52,808 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:48:52,812 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:48:54,819 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:48:54,821 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:48:54,821 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:48:54,822 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:48:54,822 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:48:54,851 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:48:54,853 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:48:55,682 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:48:55,684 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:48:55,685 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:48:55,686 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:48:55,686 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:48:56,039 - pyrogram.dispatcher - INFO - Started 16 HandlerTasks
+2025-12-26 14:48:56,166 - Legendbot - INFO - Legendbot: Assistant Started as @AndroDznsBot
+2025-12-26 14:48:56,167 - Legendbot - INFO - Legendbot: Connecting to Telegram...
+2025-12-26 14:48:57,045 - legendbot - CRITICAL - No DB requirement fullfilled!
+Please install redis, mongo or sql dependencies...
+Till then using local file as database.
+2025-12-26 14:48:57,048 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ban_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,049 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unban_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,050 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("mute_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,051 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unmute_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,051 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("kick_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,052 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("pin_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,053 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unpin_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,053 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("promote_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,054 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("demote_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,055 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("zombies_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,056 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("admins_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,056 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("bots_cmd") in group 0 from "userbot.plugins.admin"
+2025-12-26 14:48:57,103 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 14:48:57,104 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_private_handler") in group 10 from "userbot.plugins.afk"
+2025-12-26 14:48:57,104 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_group_handler") in group 10 from "userbot.plugins.afk"
+2025-12-26 14:48:57,105 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unafk_handler") in group 11 from "userbot.plugins.afk"
+2025-12-26 14:48:57,105 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_log_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 14:48:57,105 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("afk_info_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 14:48:57,106 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("toggle_afk_rename_cmd") in group 0 from "userbot.plugins.afk"
+2025-12-26 14:49:08,630 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("openai_cmd") in group 0 from "userbot.plugins.ai"
+2025-12-26 14:49:08,631 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("gemini_cmd") in group 0 from "userbot.plugins.ai"
+2025-12-26 14:49:08,633 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("carbon_cmd") in group 0 from "userbot.plugins.carbon"
+2025-12-26 14:49:08,637 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("type_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 14:49:08,637 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("upload_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 14:49:08,638 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("game_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 14:49:08,638 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("video_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 14:49:08,639 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("voice_cmd") in group 0 from "userbot.plugins.fake_actions"
+2025-12-26 14:49:08,643 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("fban_cmd") in group 0 from "userbot.plugins.federation"
+2025-12-26 14:49:08,645 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("unfban_cmd") in group 0 from "userbot.plugins.federation"
+2025-12-26 14:49:08,645 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("fed_watcher") in group 0 from "userbot.plugins.federation"
+2025-12-26 14:49:08,646 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("forensics_cmd") in group 0 from "userbot.plugins.forensics"
+2025-12-26 14:49:08,647 - pyrogram.client - INFO - [legendbot] [LOAD] EditedMessageHandler("edit_logger") in group 0 from "userbot.plugins.forensics"
+2025-12-26 14:49:08,692 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("coin_cmd") in group 0 from "userbot.plugins.fun"
+2025-12-26 14:49:08,692 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("dice_cmd") in group 0 from "userbot.plugins.fun"
+2025-12-26 14:49:08,693 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("meme_cmd") in group 0 from "userbot.plugins.fun"
+2025-12-26 14:49:08,695 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ghost_cmd") in group 0 from "userbot.plugins.ghost"
+2025-12-26 14:49:08,696 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ghost_watcher") in group 1 from "userbot.plugins.ghost"
+2025-12-26 14:49:08,702 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("help_cmd") in group 0 from "userbot.plugins.help"
+2025-12-26 14:49:08,702 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("modules_cmd") in group 0 from "userbot.plugins.help"
+2025-12-26 14:49:08,711 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("whois_cmd") in group 0 from "userbot.plugins.info"
+2025-12-26 14:49:08,712 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("id_cmd") in group 0 from "userbot.plugins.info"
+2025-12-26 14:49:08,713 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sysinfo_cmd") in group 0 from "userbot.plugins.info"
+2025-12-26 14:49:08,727 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("song_cmd") in group 0 from "userbot.plugins.media"
+2025-12-26 14:49:08,727 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("video_cmd") in group 0 from "userbot.plugins.media"
+2025-12-26 14:49:08,731 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("memory_watcher") in group -1 from "userbot.plugins.memory"
+2025-12-26 14:49:08,731 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("recall_cmd") in group 0 from "userbot.plugins.memory"
+2025-12-26 14:49:08,732 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("wipe_memory_cmd") in group 0 from "userbot.plugins.memory"
+2025-12-26 14:49:08,735 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("save_note") in group 0 from "userbot.plugins.notes"
+2025-12-26 14:49:08,736 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("get_note") in group 0 from "userbot.plugins.notes"
+2025-12-26 14:49:08,736 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("list_notes") in group 0 from "userbot.plugins.notes"
+2025-12-26 14:49:08,737 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("clear_note") in group 0 from "userbot.plugins.notes"
+2025-12-26 14:49:08,741 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("force_backup") in group 0 from "userbot.plugins.persistence"
+2025-12-26 14:49:08,743 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("alive_command") in group 0 from "userbot.plugins.ping"
+2025-12-26 14:49:08,744 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("ping_cmd") in group 0 from "userbot.plugins.ping"
+2025-12-26 14:49:08,748 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("purge_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 14:49:08,748 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("del_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 14:49:08,749 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("selfdestruct_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 14:49:08,749 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("clear_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 14:49:08,749 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("purgeme_cmd") in group 0 from "userbot.plugins.purge"
+2025-12-26 14:49:08,753 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("scan_cmd") in group 0 from "userbot.plugins.sentinel"
+2025-12-26 14:49:08,757 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("kang_cmd") in group 0 from "userbot.plugins.stickers"
+2025-12-26 14:49:08,757 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sticker_info_cmd") in group 0 from "userbot.plugins.stickers"
+2025-12-26 14:49:08,791 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("restart_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 14:49:08,791 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("update_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 14:49:08,792 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("sysinfo_cmd") in group 0 from "userbot.plugins.system"
+2025-12-26 14:49:08,798 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("type_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:49:08,799 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("mock_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:49:08,799 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("vapor_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:49:08,800 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("zalgo_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:49:08,801 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("reverse_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:49:08,802 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("spam_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:49:08,802 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("dspam_cmd") in group 0 from "userbot.plugins.text"
+2025-12-26 14:49:08,804 - pyrogram.client - INFO - [legendbot] [LOAD] MessageHandler("zombies_cmd") in group 0 from "userbot.plugins.zombies"
+2025-12-26 14:49:08,804 - pyrogram.client - INFO - [legendbot] Successfully loaded 73 plugins from "userbot.plugins"
+2025-12-26 14:49:08,806 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:49:08,808 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+2025-12-26 14:49:08,809 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:49:08,810 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:49:08,811 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:49:08,811 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:49:08,811 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:49:08,822 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:49:08,824 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:49:08,825 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:49:08,826 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:49:09,003 - pyrogram.client - INFO - Time synced: 2025-12-26 14:49:05.570897
+2025-12-26 14:49:09,103 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:49:09,104 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:49:09,104 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:49:09,105 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:49:09,105 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:49:09,227 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:49:09,228 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:49:09,228 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:49:09,228 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:49:09,229 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:49:10,137 - pyrogram.dispatcher - INFO - Started 16 HandlerTasks
+2025-12-26 14:49:10,889 - root - INFO - Legendbot Started Successfully
+2025-12-26 14:49:10,890 - root - INFO - Persistence: Backup loop started.
+2025-12-26 14:49:23,153 - pyrogram.methods.messages.edit_message_text - WARNING - `disable_web_page_preview` is deprecated and will be removed in future updates. Use `link_preview_options` instead.
+2025-12-26 14:49:26,583 - userbot.plugins.ping - INFO - DEBUG: Alive Cmd Entered. Client: <userbot.core.client.Legendbot object at 0x000001FA37B880B0>, Assistant: <pyrogram.client.Client object at 0x000001FA3CF4D100>
+2025-12-26 14:49:27,243 - userbot.plugins.ping - ERROR - DEBUG: Inline Alive Failed: Telegram says: [400 WEBPAGE_MEDIA_EMPTY] - The URL doesn't contain any valid media. (caused by "messages.SendInlineBotResult")
+Traceback (most recent call last):
+  File "C:\Users\kushw\Downloads\LegendBot\userbot\plugins\ping.py", line 28, in alive_command
+    await client.send_inline_bot_result(
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\methods\bots\send_inline_bot_result.py", line 151, in send_inline_bot_result
+    r = await self.invoke(
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\methods\advanced\invoke.py", line 107, in invoke
+    r = await session.invoke(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\session\session.py", line 551, in invoke
+    return await self.send(query, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\session\session.py", line 514, in send
+    RPCError.raise_it(result, type(data))
+  File "C:\Users\kushw\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyrogram\errors\rpc_error.py", line 91, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.WebpageMediaEmpty: Telegram says: [400 WEBPAGE_MEDIA_EMPTY] - The URL doesn't contain any valid media. (caused by "messages.SendInlineBotResult")
+2025-12-26 14:49:27,256 - pyrogram.methods.messages.edit_message_text - WARNING - `disable_web_page_preview` is deprecated and will be removed in future updates. Use `link_preview_options` instead.
+2025-12-26 14:49:36,457 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:49:36,469 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 14:49:36,472 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:49:38,479 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:49:38,482 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:49:38,483 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:49:38,483 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:49:38,484 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:49:38,490 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 14:49:38,493 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:49:40,499 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+2025-12-26 14:49:40,502 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:49:40,503 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:49:40,504 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:49:40,504 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:49:40,515 - pyrogram.connection.connection - INFO - Connected! Production DC5 (media) - IPv4
+2025-12-26 14:49:40,518 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:49:40,870 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:49:40,871 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:49:40,871 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:49:40,872 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:49:40,872 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:50:04,457 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+2025-12-26 14:50:04,458 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:50:04,459 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:50:04,461 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:50:04,462 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:50:04,463 - pyrogram.connection.connection - INFO - Connecting...
+2025-12-26 14:50:04,471 - pyrogram.connection.connection - INFO - Connected! Production DC5 - IPv4
+2025-12-26 14:50:04,474 - pyrogram.session.session - INFO - NetworkTask started
+2025-12-26 14:50:04,641 - pyrogram.session.session - INFO - Discarding packet: The msg_id is lower than all the stored values
+2025-12-26 14:50:04,747 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.15 (Layer 216)
+2025-12-26 14:50:04,747 - pyrogram.session.session - INFO - Device: CPython 3.12.0 - Pyrogram 2.2.15
+2025-12-26 14:50:04,748 - pyrogram.session.session - INFO - System: Windows 11 (en)
+2025-12-26 14:50:04,748 - pyrogram.session.session - INFO - Session started
+2025-12-26 14:50:04,749 - pyrogram.session.session - INFO - PingTask started
+2025-12-26 14:51:11,072 - pyrogram.methods.utilities.idle - INFO - Stop signal received (SIGINT). Exiting...
+2025-12-26 14:51:11,074 - pyrogram.dispatcher - INFO - Stopped 16 HandlerTasks
+2025-12-26 14:51:11,075 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:51:11,076 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:51:11,076 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:51:11,077 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:51:11,078 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:51:11,079 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:51:11,080 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:51:11,081 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:51:11,083 - pyrogram.dispatcher - INFO - Stopped 16 HandlerTasks
+2025-12-26 14:51:11,084 - pyrogram.session.session - INFO - PingTask stopped
+2025-12-26 14:51:11,085 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-12-26 14:51:11,086 - pyrogram.connection.connection - INFO - Disconnected
+2025-12-26 14:51:11,086 - pyrogram.session.session - INFO - Session stopped
+2025-12-26 14:51:11,092 - Legendbot - INFO - Legendbot: Offline.

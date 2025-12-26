@@ -1,42 +1,16 @@
 import asyncio
 import logging
-from userbot.database.core import LegendDB
+from userbot.database.core import db as liter
 from userbot.helpers import config
 
 # Singleton Database Instance
-liter = LegendDB(config.DB_NAME)
+# We use the initialized instance from userbot.database.core
+# liter = LegendDB(local_db_name=config.DB_NAME) <- This was creating a new uninitialized instance
 
-class AsyncDatabaseWrapper:
-    """
-    Wraps LegendDB to provide the legacy get/set/remove interface asynchronous.
-    """
-    def __init__(self, db_instance: LegendDB):
-        self.db = db_instance
+# Export as 'db' to maintain compatibility if plugins import 'db' from here
+db = liter
 
-    async def get(self, section: str, key: str, default=None):
-        # Maps legacy db.get(section, key) to finding a document with _id=key in collection=section
-        try:
-            doc = await self.db.find_document(section, {"_id": key})
-            if doc:
-                return doc.get("val", default)
-        except Exception:
-            pass
-        return default
-
-    async def set(self, section: str, key: str, value):
-        # Maps legacy db.set(section, key, value) to upserting a document
-        # We store as {"_id": key, "val": value}
-        data = {"_id": key, "val": value}
-        
-        # Check if exists to decide add vs update
-        existing = await self.db.find_document(section, {"_id": key})
-        if existing:
-            await self.db.update_document(section, {"_id": key}, {"val": value})
-        else:
-            await self.db.add_document(section, data)
-
-    async def remove(self, section: str, key: str):
-        await self.db.delete_document(section, {"_id": key})
-
-# Instance
-db = AsyncDatabaseWrapper(liter)
+# Monkey Patching is likely not needed if we use the core instance which is properly initialized
+# But if LegendDB class is missing methods, we might need to patch the class or the instance.
+# LegendDB class in userbot/database/core.py ALREADY has add_fban, remove_fban, get_fban.
+# So we don't need to patch it here.

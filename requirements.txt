@@ -24,6 +24,8 @@ python-dotenv>=1.0.0
 # AI
 openai>=1.0.0
 google-generativeai
+g4f
+curl_cffi
 
 # Requests kept for compatibility with plugins until refactored
 requests>=2.28.2

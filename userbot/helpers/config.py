@@ -13,6 +13,7 @@ class Config:
     API_HASH = os.getenv("API_HASH", "")
     SESSION_STRING = os.getenv("SESSION_STRING", "") or os.getenv("STRINGSESSION", "")
     BOT_TOKEN = os.getenv("BOT_TOKEN", None)
+    OWNER_ID = int(os.getenv("OWNER_ID", 0))
     
     # AI Keys
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
@@ -23,6 +24,13 @@ class Config:
     REDIS_URL = os.getenv("REDIS_URL", "")
     REDIS_PASSWORD = os.getenv("REDIS_PASSWORD", "")
     DB_NAME = os.getenv("DB_NAME", "legendbot.db")
+    DATABASE_URL = os.getenv("DATABASE_URL", "")
+    
+    # Redis Variants (for compatibility)
+    REDIS_URI = os.getenv("REDIS_URI", "") or REDIS_URL
+    REDISHOST = os.getenv("REDISHOST", "")
+    REDISPASSWORD = os.getenv("REDISPASSWORD", "") or REDIS_PASSWORD
+    REDISPORT = os.getenv("REDISPORT", "")
     
     # System
     PORT = int(os.getenv("PORT", 8080))
@@ -45,6 +53,14 @@ PORT = Config.PORT
 SUDO_USERS = Config.SUDO_USERS
 OPENAI_API_KEY = Config.OPENAI_API_KEY
 GEMINI_API_KEY = Config.GEMINI_API_KEY
+DATABASE_URL = Config.DATABASE_URL
+REDIS_URI = Config.REDIS_URI
+REDISHOST = Config.REDISHOST
+REDISPASSWORD = Config.REDISPASSWORD
+REDISPORT = Config.REDISPORT
+MONGO_URI = Config.MONGO_URI
+REDIS_PASSWORD = Config.REDIS_PASSWORD
+REDIS_URL = Config.REDIS_URL
 
 # Logging Configuration
 logging.basicConfig(

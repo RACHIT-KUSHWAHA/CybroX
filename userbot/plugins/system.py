@@ -29,7 +29,7 @@ async def restart_cmd(client: Client, message: Message):
     msg = await edit_or_reply(message, "<b>Restarting...</b>")
     
     # Save restart info to database
-    db.set("core.updater", "restart_info", {
+    await db.set("core.updater", "restart_info", {
         "type": "restart",
         "chat_id": message.chat.id,
         "message_id": message.id,

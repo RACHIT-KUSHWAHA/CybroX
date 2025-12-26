@@ -4,7 +4,8 @@ import os
 from pyrogram.enums import ParseMode
 
 from ..helpers.utils.format import md_to_text, paste_message
-from database.sudouser_db import is_sudouser, sudousers_list
+from userbot.database.sudouser_db import is_sudouser, sudousers_list
+from pyrogram.types import LinkPreviewOptions
 
 
 async def edit_or_reply(
@@ -31,18 +32,18 @@ async def edit_or_reply(
                 return await reply_to.reply_text(
                     text,
                     parse_mode=parse_mode,
-                    disable_web_page_preview=not link_preview,
+                    link_preview_options=LinkPreviewOptions(),
                 )
             return await message.reply_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
 
         await message.edit_text(
             text,
             parse_mode=parse_mode,
-            disable_web_page_preview=not link_preview,
+            link_preview_options=LinkPreviewOptions(),
         )
         return message
 
@@ -60,16 +61,16 @@ async def edit_or_reply(
             if reply_to:
                 return await reply_to.reply_text(
                     text,
-                    disable_web_page_preview=not link_preview,
+                    link_preview_options=LinkPreviewOptions(),
                 )
             return await message.reply_text(
                 text,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
 
         await message.edit_text(
             text,
-            disable_web_page_preview=not link_preview,
+            link_preview_options=LinkPreviewOptions(),
         )
         return message
 
@@ -122,19 +123,19 @@ async def edit_delete(
             sent = await reply_to.reply_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
         else:
             sent = await message.reply_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
     else:
         sent = await message.edit_text(
             text,
             parse_mode=parse_mode,
-            disable_web_page_preview=not link_preview,
+            link_preview_options=LinkPreviewOptions(),
         )
 
     await asyncio.sleep(time)

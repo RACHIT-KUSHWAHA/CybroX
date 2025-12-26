@@ -12,7 +12,20 @@ class LegendDB(UniversalDBManager):
     Wrapper for UniversalDBManager to maintain backward compatibility
     while switching to the new Legendbot capabilities.
     """
-    pass
+    async def add_fban(self, user_id: int, reason: str, admin_id: int):
+        """Add a user to the global ban list."""
+        await self.set("fban_list", str(user_id), {"reason": reason, "admin": admin_id, "date": int(time.time())})
+
+    async def remove_fban(self, user_id: int):
+        """Remove a user from the global ban list."""
+        await self.delete("fban_list", str(user_id))
+
+    async def get_fban(self, user_id: int):
+        """Check if user is fbanned. Returns dict or None."""
+        return await self.get("fban_list", str(user_id))
+
+
+
 
 # Initialize the Global Database Instance
 # We rely on config for URIs
@@ -23,28 +36,10 @@ REDIS_PASSWORD = getattr(config, "REDIS_PASSWORD", None)
 
 db = LegendDB(mongo_uri=MONGO_URI, redis_url=REDIS_URL, redis_password=REDIS_PASSWORD)
 
-# -----------------------------------------------------------
-# Federation / Anti-Spam Methods (Phase 8.2) - Adapted for UniversalDB
-# -----------------------------------------------------------
-# These methods now use the `db.set` and `db.get` abstraction
-# which handles the Redis -> Mongo -> Local fallback automatically.
-
-async def add_fban(user_id: int, reason: str, admin_id: int):
-    """Add a user to the global ban list."""
-    await db.set("fban_list", str(user_id), {"reason": reason, "admin": admin_id, "date": int(time.time())})
-
-async def remove_fban(user_id: int):
-    """Remove a user from the global ban list."""
-    await db.delete("fban_list", str(user_id))
-
-async def get_fban(user_id: int):
-    """Check if user is fbanned. Returns dict or None."""
-    return await db.get("fban_list", str(user_id))
-
-
 # Constants
 DB_FILENAME = getattr(config, "DB_NAME", "legendbot.db") 
 BACKUP_TAG = "#BACKUP_LEGENDBOT"
+
 BACKUP_INTERVAL = 3600  # 60 Minutes
 
 async def restore_database(client: Client):

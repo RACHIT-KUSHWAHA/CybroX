@@ -35,12 +35,12 @@ async def edit_or_reply(
                 return await reply_to.reply_text(
                     text,
                     parse_mode=parse_mode,
-                    disable_web_page_preview=not link_preview,
+                    link_preview_options=LinkPreviewOptions(),
                 )
             return await message.reply_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
 
         # Self-Edit
@@ -48,7 +48,7 @@ async def edit_or_reply(
             await message.edit_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
         except Exception:
             # Fallback if edit fails (e.g., message too old or type mismatch) - Rare but possible
@@ -115,20 +115,20 @@ async def edit_delete(
             sent = await reply_to.reply_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
         else:
             sent = await message.reply_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
     else:
         try:
             sent = await message.edit_text(
                 text,
                 parse_mode=parse_mode,
-                disable_web_page_preview=not link_preview,
+                link_preview_options=LinkPreviewOptions(),
             )
         except Exception:
              sent = await message.reply_text(text, parse_mode=parse_mode)
@@ -137,5 +137,18 @@ async def edit_delete(
     if sent:
         try:
             await sent.delete()
+
         except:
             pass
+
+import sys
+import os
+
+# Backward Compatibility
+with_reply = edit_or_reply
+
+def restart():
+    os.execl(sys.executable, sys.executable, "main.py")
+
+
+

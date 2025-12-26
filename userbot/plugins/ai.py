@@ -4,7 +4,11 @@ from openai import AsyncOpenAI
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
-import g4f
+
+try:
+    import g4f
+except ImportError:
+    g4f = None
 
 from userbot.core.logger import LOGS
 from userbot.helpers import config
@@ -12,7 +16,8 @@ from userbot.helpers.misc import modules_help, prefix
 from userbot.helpers.managers import edit_or_reply
 
 # Configure g4f
-g4f.debug.logging = False
+if g4f:
+    g4f.debug.logging = False
 
 # Initialize Clients
 openai_client = None
@@ -37,6 +42,8 @@ if config.GEMINI_API_KEY:
 
 async def ask_g4f(query):
     """Fallback to g4f if official API fails"""
+    if not g4f:
+        return "❌ g4f is not installed. Please install it using `pip install g4f`."
     try:
         response = await g4f.ChatCompletion.create_async(
             model=g4f.models.gpt_4o,
